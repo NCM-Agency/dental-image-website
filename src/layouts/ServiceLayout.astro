@@ -1,0 +1,110 @@
+---
+import Layout from './Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import BookingWidget from '../components/BookingWidget.astro';
+
+export interface Props {
+  title: string;
+  category: string;
+  description: string;
+  image?: string;
+}
+
+const { title, category, description, image } = Astro.props;
+---
+
+<Layout title={title} description={description}>
+  <Header />
+  
+  <!-- Service Hero -->
+  <section class="relative h-[40vh] min-h-[400px] flex items-center">
+    <div class="absolute inset-0">
+      <img 
+        src={image || "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1920&h=600&fit=crop"} 
+        alt={title}
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-gradient-to-br from-primary-900/95 via-primary-900/85 to-primary-800/80"></div>
+    </div>
+    
+    <div class="container mx-auto px-4 relative z-10 flex flex-col justify-center h-full py-12">
+      <nav class="flex items-center gap-2 text-white/80 text-sm mb-6">
+        <a href="/" class="hover:text-white transition-colors">Home</a>
+        <span>/</span>
+        <a href="/services" class="hover:text-white transition-colors">Services</a>
+        <span>/</span>
+        <span class="text-white">{category}</span>
+      </nav>
+      
+      <div class="flex-1 flex flex-col justify-center">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-normal text-white mb-4">
+          {title}
+        </h1>
+        <p class="text-xl text-white/90 max-w-3xl">
+          {description}
+        </p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Service Content -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="grid lg:grid-cols-3 gap-12">
+        <!-- Main Content -->
+        <div class="lg:col-span-2">
+          <slot />
+        </div>
+        
+        <!-- Sidebar -->
+        <aside class="lg:col-span-1">
+          <!-- Quick Booking Card -->
+          <div class="bg-gradient-to-br from-accent-50 to-accent-100/30 rounded-2xl p-8 mb-8 sticky top-24">
+            <h3 class="text-2xl font-heading font-semibold text-dental-charcoal mb-4">
+              Ready to Get Started?
+            </h3>
+            <p class="text-gray-600 mb-6">
+              Book your appointment online or call us directly.
+            </p>
+            <a href="#book-appointment" class="block w-full text-center bg-primary-900 text-white py-3 rounded-lg font-medium hover:bg-primary-800 transition-colors mb-4">
+              Book Online
+            </a>
+            <div class="text-center">
+              <p class="text-sm text-gray-500 mb-2">Or call us at:</p>
+              <a href="tel:204-809-3604" class="text-primary-900 font-semibold hover:text-primary-800">
+                St. Vital: 204-809-3604
+              </a><br>
+              <a href="tel:204-800-2709" class="text-primary-900 font-semibold hover:text-primary-800">
+                Garden City: 204-800-2709
+              </a>
+            </div>
+          </div>
+          
+          <!-- Related Services -->
+          <div class="bg-white rounded-2xl shadow-lg p-6">
+            <h3 class="text-xl font-heading font-semibold text-dental-charcoal mb-4">
+              Related Services
+            </h3>
+            <slot name="related-services" />
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+  
+  <!-- FAQ Section -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-heading font-semibold text-center text-dental-charcoal mb-12">
+        Frequently Asked Questions
+      </h2>
+      <div class="max-w-3xl mx-auto">
+        <slot name="faq" />
+      </div>
+    </div>
+  </section>
+  
+  <BookingWidget />
+  <Footer />
+</Layout>

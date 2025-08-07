@@ -1,0 +1,413 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+---
+
+<ServiceLayout 
+  title="Tooth Extractions" 
+  category="Oral Surgery"
+  description="Safe and comfortable tooth removal for severely infected or damaged teeth, followed by replacement options to restore your smile."
+  image="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=1920&h=600&fit=crop"
+>
+  
+  <!-- Main Content -->
+  <div class="prose prose-lg max-w-none">
+    <div class="bg-gradient-to-r from-accent-100 to-accent-200/50 border-l-4 border-accent-300 p-6 rounded-r-lg mb-8">
+      <h3 class="text-xl font-semibold text-dental-charcoal mb-2">When Removal is Necessary</h3>
+      <p class="text-gray-700 mb-0">
+        Sometimes a tooth is too severely infected or damaged to be saved. We perform safe, comfortable 
+        extractions using local anesthetic, and always discuss replacement options to restore your smile 
+        and oral function.
+      </p>
+    </div>
+
+    <h2 class="text-3xl font-heading font-semibold text-dental-charcoal mb-6">
+      When Tooth Extraction is Needed
+    </h2>
+    
+    <div class="grid md:grid-cols-2 gap-6 mb-12">
+      <!-- Common Reasons -->
+      <div class="space-y-4">
+        <div class="bg-white rounded-xl shadow-md p-6">
+          <h3 class="text-lg font-semibold text-primary-900 mb-4">Common Reasons for Extraction</h3>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3">
+              <div class="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                <span class="text-red-600 text-xs font-bold">!</span>
+              </div>
+              <div>
+                <h4 class="font-semibold">Severe Infection</h4>
+                <p class="text-sm text-gray-600">Infection has spread beyond what root canal therapy can treat</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                <span class="text-red-600 text-xs font-bold">!</span>
+              </div>
+              <div>
+                <h4 class="font-semibold">Extensive Decay</h4>
+                <p class="text-sm text-gray-600">Tooth structure too damaged to support a filling or crown</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                <span class="text-red-600 text-xs font-bold">!</span>
+              </div>
+              <div>
+                <h4 class="font-semibold">Severe Fracture</h4>
+                <p class="text-sm text-gray-600">Crack or break extends below the gum line</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                <span class="text-red-600 text-xs font-bold">!</span>
+              </div>
+              <div>
+                <h4 class="font-semibold">Advanced Gum Disease</h4>
+                <p class="text-sm text-gray-600">Tooth has lost too much supporting bone structure</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Other Situations -->
+      <div class="space-y-4">
+        <div class="bg-white rounded-xl shadow-md p-6">
+          <h3 class="text-lg font-semibold text-primary-900 mb-4">Other Situations</h3>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3">
+              <div class="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                <span class="text-blue-600 text-xs font-bold">i</span>
+              </div>
+              <div>
+                <h4 class="font-semibold">Orthodontic Treatment</h4>
+                <p class="text-sm text-gray-600">Creating space for proper tooth alignment</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                <span class="text-blue-600 text-xs font-bold">i</span>
+              </div>
+              <div>
+                <h4 class="font-semibold">Impacted Teeth</h4>
+                <p class="text-sm text-gray-600">Teeth that cannot properly emerge through the gums</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                <span class="text-blue-600 text-xs font-bold">i</span>
+              </div>
+              <div>
+                <h4 class="font-semibold">Overcrowding</h4>
+                <p class="text-sm text-gray-600">Too many teeth for the available space</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <div class="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                <span class="text-blue-600 text-xs font-bold">i</span>
+              </div>
+              <div>
+                <h4 class="font-semibold">Preparation for Dentures</h4>
+                <p class="text-sm text-gray-600">Removing remaining damaged teeth before full denture placement</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="text-3xl font-heading font-semibold text-dental-charcoal mb-6">
+      Types of Extractions
+    </h2>
+
+    <div class="grid md:grid-cols-2 gap-8 mb-12">
+      <!-- Simple Extraction -->
+      <div class="bg-gradient-to-br from-primary-50 to-primary-100/30 rounded-xl p-6">
+        <h3 class="text-xl font-semibold text-primary-900 mb-4">Simple Extraction</h3>
+        <p class="text-gray-600 mb-4">
+          For teeth that are visible in the mouth and can be removed easily. Most routine extractions 
+          fall into this category.
+        </p>
+        
+        <h4 class="font-semibold mb-2">Procedure:</h4>
+        <ol class="space-y-2 text-gray-600 text-sm mb-4">
+          <li>1. Local anesthetic is administered</li>
+          <li>2. Tooth is loosened with dental instruments</li>
+          <li>3. Tooth is gently removed with forceps</li>
+          <li>4. Bleeding is controlled and healing instructions given</li>
+        </ol>
+        
+        <div class="bg-primary-100 rounded-lg p-4">
+          <p class="text-sm text-gray-700">
+            <strong>Recovery:</strong> 1-3 days with minimal discomfort
+          </p>
+        </div>
+      </div>
+
+      <!-- Surgical Extraction -->
+      <div class="bg-gradient-to-br from-accent-50 to-accent-100/30 rounded-xl p-6">
+        <h3 class="text-xl font-semibold text-dental-charcoal mb-4">Surgical Extraction</h3>
+        <p class="text-gray-600 mb-4">
+          For teeth that are broken at the gum line, impacted, or have complex root structures. 
+          Requires more advanced techniques.
+        </p>
+        
+        <h4 class="font-semibold mb-2">Procedure:</h4>
+        <ol class="space-y-2 text-gray-600 text-sm mb-4">
+          <li>1. Local anesthetic (possibly sedation)</li>
+          <li>2. Small incision in the gum tissue</li>
+          <li>3. Tooth may be sectioned for easier removal</li>
+          <li>4. Extraction site is cleaned and sutured</li>
+        </ol>
+        
+        <div class="bg-accent-100 rounded-lg p-4">
+          <p class="text-sm text-gray-700">
+            <strong>Recovery:</strong> 3-7 days with managed post-operative care
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="text-3xl font-heading font-semibold text-dental-charcoal mb-6">
+      What to Expect During Your Procedure
+    </h2>
+
+    <div class="bg-gradient-to-br from-accent-50 to-accent-100/30 rounded-2xl p-8 mb-12">
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="text-center">
+          <div class="w-16 h-16 bg-primary-900 rounded-full mx-auto mb-4 flex items-center justify-center">
+            <svg class="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h4 class="font-semibold mb-2">Before</h4>
+          <p class="text-sm text-gray-600">
+            We'll review your medical history, take X-rays if needed, and explain the procedure. 
+            Local anesthetic ensures you're comfortable.
+          </p>
+        </div>
+
+        <div class="text-center">
+          <div class="w-16 h-16 bg-primary-900 rounded-full mx-auto mb-4 flex items-center justify-center">
+            <svg class="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h4 class="font-semibold mb-2">During</h4>
+          <p class="text-sm text-gray-600">
+            You'll feel pressure but no pain. Simple extractions typically take just a few minutes. 
+            We work efficiently while prioritizing your comfort.
+          </p>
+        </div>
+
+        <div class="text-center">
+          <div class="w-16 h-16 bg-primary-900 rounded-full mx-auto mb-4 flex items-center justify-center">
+            <svg class="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+            </svg>
+          </div>
+          <h4 class="font-semibold mb-2">After</h4>
+          <p class="text-sm text-gray-600">
+            We'll provide detailed aftercare instructions and prescribe any necessary medications. 
+            Follow-up appointments ensure proper healing.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="text-3xl font-heading font-semibold text-dental-charcoal mb-6">
+      Post-Extraction Care
+    </h2>
+
+    <div class="grid md:grid-cols-2 gap-6 mb-12">
+      <div class="bg-white rounded-xl shadow-md p-6">
+        <h3 class="text-lg font-semibold text-green-700 mb-4">What TO Do</h3>
+        <ul class="space-y-3">
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-green-600 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+            </svg>
+            <span>Bite on gauze for 30-45 minutes to control bleeding</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-green-600 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+            </svg>
+            <span>Apply ice packs for 15-20 minutes to reduce swelling</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-green-600 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+            </svg>
+            <span>Take prescribed medications as directed</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-green-600 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+            </svg>
+            <span>Eat soft foods and drink plenty of fluids</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-green-600 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+            </svg>
+            <span>Rinse gently with salt water after 24 hours</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-md p-6">
+        <h3 class="text-lg font-semibold text-red-700 mb-4">What NOT to Do</h3>
+        <ul class="space-y-3">
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-red-600 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+            </svg>
+            <span>Don't smoke or use tobacco products</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-red-600 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+            </svg>
+            <span>Avoid drinking through straws</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-red-600 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+            </svg>
+            <span>Don't spit forcefully or rinse vigorously</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-red-600 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+            </svg>
+            <span>Avoid hard, crunchy, or spicy foods</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <svg class="w-5 h-5 text-red-600 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+            </svg>
+            <span>Don't touch the extraction site with fingers or tongue</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <h2 class="text-3xl font-heading font-semibold text-dental-charcoal mb-6">
+      Replacement Options After Extraction
+    </h2>
+
+    <div class="grid md:grid-cols-3 gap-6 mb-12">
+      <div class="bg-white rounded-xl shadow-md p-6 text-center">
+        <div class="w-16 h-16 bg-primary-100 rounded-full mx-auto mb-4 flex items-center justify-center">
+          <svg class="w-8 h-8 text-primary-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold mb-2">Dental Implants</h3>
+        <p class="text-gray-600 text-sm mb-3">
+          Most natural-feeling permanent replacement option
+        </p>
+        <a href="/services/dental-implants" class="text-primary-900 font-medium text-sm hover:text-primary-800">Learn more →</a>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-md p-6 text-center">
+        <div class="w-16 h-16 bg-accent-100 rounded-full mx-auto mb-4 flex items-center justify-center">
+          <svg class="w-8 h-8 text-primary-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold mb-2">Dental Bridge</h3>
+        <p class="text-gray-600 text-sm mb-3">
+          Fixed replacement that uses adjacent teeth for support
+        </p>
+        <a href="/services/crowns-bridges" class="text-primary-900 font-medium text-sm hover:text-primary-800">Learn more →</a>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-md p-6 text-center">
+        <div class="w-16 h-16 bg-blue-100 rounded-full mx-auto mb-4 flex items-center justify-center">
+          <svg class="w-8 h-8 text-primary-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </div>
+        <h3 class="text-lg font-semibold mb-2">Partial Denture</h3>
+        <p class="text-gray-600 text-sm mb-3">
+          Removable option for replacing one or several teeth
+        </p>
+        <a href="/services/dentures" class="text-primary-900 font-medium text-sm hover:text-primary-800">Learn more →</a>
+      </div>
+    </div>
+
+    <div class="bg-primary-900 text-white rounded-2xl p-8">
+      <h3 class="text-2xl font-heading font-semibold mb-4">
+        Comfortable & Safe Tooth Extraction
+      </h3>
+      <p class="mb-6">
+        When extraction is necessary, we make the process as comfortable as possible. 
+        We'll also help you explore the best replacement options to restore your smile.
+      </p>
+      <a href="#book-appointment" class="inline-flex items-center gap-2 bg-accent-300 text-primary-900 px-6 py-3 rounded-full font-medium hover:bg-accent-200 transition-colors">
+        Schedule Your Consultation
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- Related Services -->
+  <div slot="related-services" class="space-y-3">
+    <a href="/services/wisdom-teeth" class="block p-3 rounded-lg hover:bg-gray-50 transition-colors">
+      <h4 class="font-semibold text-dental-charcoal">Wisdom Tooth Removal</h4>
+      <p class="text-sm text-gray-600">Specialized extraction service</p>
+    </a>
+    <a href="/services/dental-implants" class="block p-3 rounded-lg hover:bg-gray-50 transition-colors">
+      <h4 class="font-semibold text-dental-charcoal">Dental Implants</h4>
+      <p class="text-sm text-gray-600">Permanent tooth replacement</p>
+    </a>
+    <a href="/services/emergency-dental" class="block p-3 rounded-lg hover:bg-gray-50 transition-colors">
+      <h4 class="font-semibold text-dental-charcoal">Emergency Dental Care</h4>
+      <p class="text-sm text-gray-600">Urgent tooth pain relief</p>
+    </a>
+  </div>
+
+  <!-- FAQ -->
+  <div slot="faq" class="space-y-6">
+    <details class="bg-white rounded-lg shadow-md p-6">
+      <summary class="font-semibold text-lg cursor-pointer">Will the tooth extraction hurt?</summary>
+      <p class="mt-4 text-gray-600">
+        We use local anesthetic to ensure you're completely comfortable during the procedure. 
+        You may feel pressure but should not experience pain. After the procedure, any discomfort 
+        can usually be managed with over-the-counter pain relievers.
+      </p>
+    </details>
+    
+    <details class="bg-white rounded-lg shadow-md p-6">
+      <summary class="font-semibold text-lg cursor-pointer">How long does it take to heal after an extraction?</summary>
+      <p class="mt-4 text-gray-600">
+        Initial healing typically takes 1-2 weeks, with the socket forming a blood clot within 24 hours. 
+        Complete healing of the bone and gum tissue can take several months. Most patients return to 
+        normal activities within a few days.
+      </p>
+    </details>
+    
+    <details class="bg-white rounded-lg shadow-md p-6">
+      <summary class="font-semibold text-lg cursor-pointer">What is dry socket and how can I prevent it?</summary>
+      <p class="mt-4 text-gray-600">
+        Dry socket occurs when the blood clot is dislodged from the extraction site, causing severe pain. 
+        Prevent it by avoiding smoking, drinking through straws, spitting forcefully, and following all 
+        post-operative instructions carefully.
+      </p>
+    </details>
+
+    <details class="bg-white rounded-lg shadow-md p-6">
+      <summary class="font-semibold text-lg cursor-pointer">Can I eat normally after tooth extraction?</summary>
+      <p class="mt-4 text-gray-600">
+        Start with soft foods like yogurt, soup, and smoothies for the first few days. Gradually reintroduce 
+        normal foods as comfort allows. Avoid hard, crunchy, or sticky foods near the extraction site 
+        during the initial healing period.
+      </p>
+    </details>
+  </div>
+
+</ServiceLayout>

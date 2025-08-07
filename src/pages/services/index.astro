@@ -1,0 +1,181 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import { siteData } from '../../data/site-data';
+
+const allServices = [
+  {
+    category: "General Dentistry",
+    description: "Comprehensive care for your everyday dental needs",
+    services: [
+      { id: "emergency-dental", name: "Emergency Dental Care", description: "Same-day relief for urgent dental issues", link: "/services/emergency-dental" },
+      { id: "cleanings", name: "Cleanings & Exams", description: "Regular checkups for optimal oral health", link: "/services/cleanings-exams" },
+      { id: "fillings", name: "Dental Fillings", description: "Restore teeth damaged by decay", link: "/services/fillings" },
+      { id: "root-canal", name: "Root Canal Therapy", description: "Save infected teeth without extraction", link: "/services/root-canal" },
+      { id: "extractions", name: "Tooth Extractions", description: "Safe removal when necessary", link: "/services/extractions" }
+    ]
+  },
+  {
+    category: "Cosmetic Dentistry",
+    description: "Transform your smile with advanced aesthetic treatments",
+    services: [
+      { id: "zoom-whitening", name: "Zoom! Whitening", description: "Professional teeth whitening in one hour", link: "/services/zoom-whitening" },
+      { id: "invisalign", name: "Invisalign®", description: "Straighten teeth without metal braces", link: "/services/invisalign" },
+      { id: "veneers", name: "Veneers & Lumineers", description: "Perfect your smile with custom shells", link: "/services/veneers" },
+      { id: "crowns", name: "Crowns & Bridges", description: "Rebuild and restore damaged teeth", link: "/services/crowns-bridges" }
+    ]
+  },
+  {
+    category: "Advanced Treatments",
+    description: "State-of-the-art technology for complex dental needs",
+    services: [
+      { id: "implants", name: "Dental Implants", description: "Permanent tooth replacement solutions", link: "/services/dental-implants" },
+      { id: "cerec", name: "CEREC Technology", description: "Same-day digital restorations", link: "/services/cerec" },
+      { id: "sedation", name: "IV Sedation", description: "Comfortable care for anxious patients", link: "/services/sedation" },
+      { id: "dentures", name: "Dentures", description: "Custom-fitted tooth replacements", link: "/services/dentures" }
+    ]
+  }
+];
+---
+
+<Layout title="Our Services" description="Comprehensive dental services at two convenient Winnipeg locations">
+  <Header />
+  
+  <!-- Services Hero -->
+  <section class="relative py-20 bg-gradient-to-br from-primary-900 via-primary-800 to-primary-700">
+    <div class="absolute inset-0 bg-black/10"></div>
+    <div class="container mx-auto px-4 relative z-10">
+      <div class="text-center text-white max-w-3xl mx-auto">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-normal mb-6">
+          Comprehensive Dental Services
+        </h1>
+        <p class="text-xl text-white/90">
+          From routine cleanings to advanced restorations, we provide complete dental care 
+          using the latest technology and techniques.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Grid -->
+  <section class="py-20">
+    <div class="container mx-auto px-4">
+      {allServices.map((category, index) => (
+        <div class="mb-16 last:mb-0">
+          <!-- Category Header -->
+          <div class="text-center mb-12">
+            <div class="inline-flex items-center gap-2 bg-accent-100 text-primary-900 px-4 py-2 rounded-full text-sm font-medium mb-4">
+              {category.category}
+            </div>
+            <h2 class="text-3xl md:text-4xl font-heading font-semibold text-dental-charcoal mb-4">
+              {category.category}
+            </h2>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+              {category.description}
+            </p>
+          </div>
+          
+          <!-- Services Cards -->
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {category.services.map((service) => (
+              <a href={service.link} class="group">
+                <div class="bg-white rounded-xl shadow-lg p-6 h-full transition-all duration-300 group-hover:shadow-2xl group-hover:-translate-y-1">
+                  <div class="w-12 h-12 bg-gradient-to-br from-accent-100 to-accent-200/30 rounded-lg flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-primary-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                  <h3 class="text-xl font-semibold text-dental-charcoal mb-2 group-hover:text-primary-900 transition-colors">
+                    {service.name}
+                  </h3>
+                  <p class="text-gray-600">
+                    {service.description}
+                  </p>
+                  <div class="mt-4 flex items-center text-primary-900 font-medium">
+                    Learn More
+                    <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Technology Section -->
+  <section class="py-20 bg-gradient-to-br from-accent-50 to-accent-100/30">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-heading font-semibold text-dental-charcoal mb-4">
+          Advanced Technology for Better Care
+        </h2>
+        <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+          We invest in the latest dental technology to provide faster, more comfortable, and more precise treatments.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div class="text-center">
+          <div class="w-20 h-20 bg-primary-900 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-10 h-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-dental-charcoal mb-2">CEREC Technology</h3>
+          <p class="text-gray-600">Same-day crowns and restorations with digital impressioning</p>
+        </div>
+        
+        <div class="text-center">
+          <div class="w-20 h-20 bg-accent-300 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-10 h-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-dental-charcoal mb-2">Zoom! Whitening</h3>
+          <p class="text-gray-600">Professional teeth whitening in just one hour</p>
+        </div>
+        
+        <div class="text-center">
+          <div class="w-20 h-20 bg-primary-800 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-10 h-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-dental-charcoal mb-2">Ultrasonic Scaling</h3>
+          <p class="text-gray-600">Gentler, more comfortable cleanings</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-gradient-to-r from-primary-900 to-primary-800">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-heading font-semibold text-white mb-6">
+        Ready to Experience Modern Dental Care?
+      </h2>
+      <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+        Book your appointment at either of our convenient Winnipeg locations and discover 
+        the difference our comprehensive services can make.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#book-appointment" class="inline-flex items-center justify-center px-8 py-4 bg-accent-300 text-primary-900 rounded-full font-medium hover:bg-accent-200 transition-colors">
+          Book Your Appointment
+          <svg class="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+        <a href="/contact" class="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white rounded-full font-medium hover:bg-white/10 transition-colors">
+          Contact Us
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

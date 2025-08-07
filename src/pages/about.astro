@@ -1,0 +1,353 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import BookingWidget from '../components/BookingWidget.astro';
+import { siteData } from '../data/site-data';
+---
+
+<Layout title="About Us" description="Learn about Dental Image Therapy Centres - over 30 years of trusted dental care in Winnipeg">
+  <Header />
+  
+  <!-- About Hero -->
+  <section class="relative h-[50vh] min-h-[400px] flex items-center">
+    <div class="absolute inset-0">
+      <img 
+        src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1920&h=600&fit=crop" 
+        alt="Our dental team"
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-gradient-to-br from-primary-900/95 via-primary-900/85 to-primary-800/80"></div>
+    </div>
+    
+    <div class="container mx-auto px-4 relative z-10 text-white">
+      <nav class="flex items-center gap-2 text-white/80 text-sm mb-4">
+        <a href="/" class="hover:text-white transition-colors">Home</a>
+        <span>/</span>
+        <span class="text-white">About Us</span>
+      </nav>
+      
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-normal mb-4">
+        About Dental Image
+      </h1>
+      <p class="text-xl text-white/90 max-w-3xl">
+        Building confidence through exceptional dental care since 1994
+      </p>
+    </div>
+  </section>
+
+  <!-- Our Story -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="prose prose-lg max-w-none">
+          <h2 class="text-3xl md:text-4xl font-heading font-semibold text-dental-charcoal mb-6 text-center">
+            Our Story
+          </h2>
+          
+          <p class="text-lg text-gray-700 mb-6">
+            For over 30 years, Dental Image Therapy Centres has been a cornerstone of dental health in Winnipeg. 
+            What started as a single practice with a vision to provide comprehensive, compassionate dental care has 
+            grown into two state-of-the-art facilities serving thousands of families across the city.
+          </p>
+
+          <p class="text-lg text-gray-700 mb-6">
+            Our name, "Dental Image," reflects our commitment to helping patients achieve the smile they envision. 
+            "Therapy Centres" emphasizes our holistic approach to dental health – we don't just treat teeth, we care 
+            for people. This philosophy has guided us through three decades of service and continues to drive us today.
+          </p>
+
+          <div class="bg-accent-100 border-l-4 border-accent-300 p-6 rounded-r-lg my-8">
+            <h3 class="text-xl font-semibold text-dental-charcoal mb-2">Our Mission</h3>
+            <p class="text-gray-700 mb-0">
+              To provide exceptional dental care in a comfortable, modern environment while building lasting relationships 
+              with our patients based on trust, education, and mutual respect.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values Section -->
+  <section class="py-16 bg-gradient-to-br from-accent-50 to-accent-100/30">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-heading font-semibold text-center text-dental-charcoal mb-12">
+        Our Core Values
+      </h2>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+        <div class="text-center">
+          <div class="w-20 h-20 bg-primary-900 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-10 h-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Compassion</h3>
+          <p class="text-gray-600">Treating every patient with kindness, empathy, and understanding</p>
+        </div>
+        
+        <div class="text-center">
+          <div class="w-20 h-20 bg-accent-300 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-10 h-10 text-primary-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Innovation</h3>
+          <p class="text-gray-600">Embracing the latest technology and techniques in dentistry</p>
+        </div>
+        
+        <div class="text-center">
+          <div class="w-20 h-20 bg-primary-800 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-10 h-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Community</h3>
+          <p class="text-gray-600">Building lasting relationships with patients and giving back</p>
+        </div>
+        
+        <div class="text-center">
+          <div class="w-20 h-20 bg-primary-700 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-10 h-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Excellence</h3>
+          <p class="text-gray-600">Committed to the highest standards in everything we do</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- By the Numbers -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-heading font-semibold text-center text-dental-charcoal mb-12">
+        Dental Image by the Numbers
+      </h2>
+      
+      <div class="grid md:grid-cols-4 gap-8 max-w-4xl mx-auto text-center">
+        <div>
+          <div class="text-4xl font-bold text-primary-900 mb-2">30+</div>
+          <p class="text-gray-600">Years of Service</p>
+        </div>
+        <div>
+          <div class="text-4xl font-bold text-accent-300 mb-2">12</div>
+          <p class="text-gray-600">Expert Dentists</p>
+        </div>
+        <div>
+          <div class="text-4xl font-bold text-primary-900 mb-2">2</div>
+          <p class="text-gray-600">Convenient Locations</p>
+        </div>
+        <div>
+          <div class="text-4xl font-bold text-accent-300 mb-2">20,000+</div>
+          <p class="text-gray-600">Happy Patients</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Leadership Team -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-heading font-semibold text-center text-dental-charcoal mb-12">
+        Leadership Team
+      </h2>
+      
+      <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+          <div class="h-64">
+            <img 
+              src="https://cdn.prod.website-files.com/66fc3785fb8abc41f9227d10/66fc3785fb8abc41f92280e1_HeadshotPatrick.jpg"
+              alt="Dr. Patrick McManus"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-1">Dr. Patrick McManus</h3>
+            <p class="text-primary-900 text-sm mb-3">Owner & Lead Dentist - St. Vital</p>
+            <p class="text-gray-600 text-sm">
+              University of Manitoba graduate and part-time clinical instructor. With over 25 years of experience, 
+              Dr. McManus leads our St. Vital location with a commitment to patient-centered care.
+            </p>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+          <div class="h-64">
+            <img 
+              src="https://cdn.prod.website-files.com/66fc3785fb8abc41f9227d10/66fc3785fb8abc41f922823f_DITC_2022_Headshot_Dziewit.jpg"
+              alt="Dr. Donald Dziewit"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-1">Dr. Donald Dziewit</h3>
+            <p class="text-primary-900 text-sm mb-3">Co-Owner - Garden City</p>
+            <p class="text-gray-600 text-sm">
+              Winnipeg native and University of Manitoba 1994 graduate. In practice since 1998, partner since 2007, 
+              bringing innovation and expertise to our Garden City location.
+            </p>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+          <div class="h-64">
+            <img 
+              src="https://cdn.prod.website-files.com/66fc3785fb8abc41f9227d10/66fc3785fb8abc41f922823e_DITC_2022_Headshot_Linda-Simpson.jpg"
+              alt="Dr. Linda Simpson"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-1">Dr. Linda Simpson</h3>
+            <p class="text-primary-900 text-sm mb-3">Co-Owner - Garden City</p>
+            <p class="text-gray-600 text-sm">
+              Miami, MB native and University of Manitoba 2002 graduate. Pacific Training Institute graduate, 
+              partner since 2007, specializing in family dentistry with compassionate care.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-heading font-semibold text-dental-charcoal mb-8">
+          Why Families Choose Dental Image
+        </h2>
+        
+        <div class="grid md:grid-cols-2 gap-6 text-left">
+          <div class="flex items-start gap-4">
+            <svg class="w-6 h-6 text-accent-300 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+            </svg>
+            <div>
+              <h4 class="font-semibold mb-1">Extended Hours</h4>
+              <p class="text-gray-600">Early morning and evening appointments to fit your schedule</p>
+            </div>
+          </div>
+          
+          <div class="flex items-start gap-4">
+            <svg class="w-6 h-6 text-accent-300 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+            </svg>
+            <div>
+              <h4 class="font-semibold mb-1">Two Locations</h4>
+              <p class="text-gray-600">Convenient access from anywhere in Winnipeg</p>
+            </div>
+          </div>
+          
+          <div class="flex items-start gap-4">
+            <svg class="w-6 h-6 text-accent-300 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+            </svg>
+            <div>
+              <h4 class="font-semibold mb-1">All Ages Welcome</h4>
+              <p class="text-gray-600">From first teeth to golden years, we care for everyone</p>
+            </div>
+          </div>
+          
+          <div class="flex items-start gap-4">
+            <svg class="w-6 h-6 text-accent-300 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+            </svg>
+            <div>
+              <h4 class="font-semibold mb-1">Direct Billing</h4>
+              <p class="text-gray-600">We work with all major insurance providers</p>
+            </div>
+          </div>
+          
+          <div class="flex items-start gap-4">
+            <svg class="w-6 h-6 text-accent-300 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+            </svg>
+            <div>
+              <h4 class="font-semibold mb-1">Emergency Care</h4>
+              <p class="text-gray-600">Same-day appointments for urgent dental needs</p>
+            </div>
+          </div>
+          
+          <div class="flex items-start gap-4">
+            <svg class="w-6 h-6 text-accent-300 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+            </svg>
+            <div>
+              <h4 class="font-semibold mb-1">Modern Technology</h4>
+              <p class="text-gray-600">Latest equipment for comfortable, efficient treatment</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Affiliations Section -->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-heading font-semibold text-center text-dental-charcoal mb-12">
+        Professional Affiliations
+      </h2>
+      <div class="max-w-4xl mx-auto">
+        <p class="text-center text-gray-600 mb-8">
+          We maintain memberships and certifications with leading dental organizations to ensure 
+          we provide the highest standard of care.
+        </p>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
+          <div class="text-center">
+            <p class="text-sm font-medium text-gray-700">Canadian Dental<br/>Association</p>
+          </div>
+          <div class="text-center">
+            <p class="text-sm font-medium text-gray-700">Manitoba Dental<br/>Association</p>
+          </div>
+          <div class="text-center">
+            <p class="text-sm font-medium text-gray-700">Winnipeg Dental<br/>Society</p>
+          </div>
+          <div class="text-center">
+            <p class="text-sm font-medium text-gray-700">CEREC<br/>Doctors</p>
+          </div>
+          <div class="text-center">
+            <p class="text-sm font-medium text-gray-700">Invisalign<br/>Provider</p>
+          </div>
+          <div class="text-center">
+            <p class="text-sm font-medium text-gray-700">SureSmile<br/>Network</p>
+          </div>
+          <div class="text-center col-span-2">
+            <p class="text-sm font-medium text-gray-700">Pacific Training Institute<br/>for Facial Aesthetics & Therapeutics</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 bg-gradient-to-r from-primary-900 to-primary-800">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl md:text-4xl font-heading font-semibold text-white mb-6">
+        Experience the Dental Image Difference
+      </h2>
+      <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+        Join thousands of families who trust us with their smiles. Schedule your appointment 
+        today and discover compassionate, comprehensive dental care.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#book-appointment" class="inline-flex items-center justify-center px-8 py-4 bg-accent-300 text-primary-900 rounded-full font-medium hover:bg-accent-200 transition-colors">
+          Book Your Appointment
+          <svg class="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+        <a href="/locations" class="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white rounded-full font-medium hover:bg-white/10 transition-colors">
+          Visit Our Locations
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <BookingWidget />
+  <Footer />
+</Layout>

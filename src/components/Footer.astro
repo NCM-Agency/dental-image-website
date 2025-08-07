@@ -1,0 +1,138 @@
+---
+import { siteData } from '../data/site-data'
+
+const currentYear = new Date().getFullYear()
+
+const footerLinks = {
+  services: [
+    { name: 'General Dentistry', href: '/services/general-dentistry' },
+    { name: 'Cosmetic Dentistry', href: '/services/cosmetic-dentistry' },
+    { name: 'Emergency Dental', href: '/services/emergency-dental' },
+    { name: 'Children\'s Dentistry', href: '/services/childrens-dentistry' },
+    { name: 'All Services', href: '/services' },
+  ],
+  locations: [
+    { name: 'St. Vital Centre', href: '/locations/st-vital' },
+    { name: 'Garden City', href: '/locations/garden-city' },
+  ],
+  quickLinks: [
+    { name: 'About Us', href: '/about' },
+    { name: 'Contact Us', href: '/contact' },
+    { name: 'Book Appointment', href: '#book-appointment' },
+  ]
+}
+---
+
+<footer class="bg-dental-charcoal text-white">
+  <!-- Main Footer Content -->
+  <div class="container mx-auto px-4 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+      <!-- Brand Column -->
+      <div class="lg:col-span-2">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-12 h-12 bg-gradient-to-br from-primary-400 to-dental-teal rounded-lg flex items-center justify-center">
+            <svg class="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+            </svg>
+          </div>
+          <div>
+            <div class="text-xl font-heading font-bold">Dental Image</div>
+            <div class="text-xs text-gray-400">{siteData.tagline}</div>
+          </div>
+        </div>
+        <p class="text-gray-400 mb-6 max-w-sm">
+          Serving Winnipeg families for over 30 years with modern, compassionate dental care at two convenient locations.
+        </p>
+        
+        <!-- Location Quick Info -->
+        <div class="space-y-3">
+          {siteData.locations.map((location) => (
+            <div class="flex items-center gap-2 text-sm">
+              <svg class="w-4 h-4 text-accent-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <span class="text-gray-400">
+                <strong class="text-white">{location.name}:</strong> {location.phone}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+      
+      <!-- Services Links -->
+      <div>
+        <h3 class="font-heading font-semibold mb-4">Services</h3>
+        <ul class="space-y-2">
+          {footerLinks.services.map((link) => (
+            <li>
+              <a href={link.href} class="text-gray-400 hover:text-white transition-colors text-sm">
+                {link.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+      
+      <!-- Locations Links -->
+      <div>
+        <h3 class="font-heading font-semibold mb-4">Locations</h3>
+        <ul class="space-y-2">
+          {footerLinks.locations.map((link) => (
+            <li>
+              <a href={link.href} class="text-gray-400 hover:text-white transition-colors text-sm">
+                {link.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+      
+      <!-- Quick Links -->
+      <div>
+        <h3 class="font-heading font-semibold mb-4">Quick Links</h3>
+        <ul class="space-y-2">
+          {footerLinks.quickLinks.map((link) => (
+            <li>
+              <a href={link.href} class="text-gray-400 hover:text-white transition-colors text-sm">
+                {link.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+    
+    <!-- CTA Section -->
+    <div class="mt-12 pt-12 border-t border-gray-800">
+      <div class="bg-gradient-to-r from-primary-700 to-dental-teal rounded-2xl p-8 text-center">
+        <h3 class="text-2xl font-heading font-bold mb-3">Ready to Schedule Your Visit?</h3>
+        <p class="text-white/90 mb-6 max-w-2xl mx-auto">
+          Join thousands of satisfied patients who trust us with their dental health. Book your appointment today at either of our convenient Winnipeg locations.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="#book-appointment" class="inline-flex items-center justify-center px-8 py-3 bg-white text-primary-700 rounded-full hover:bg-gray-100 transition-colors font-medium">
+            Book Online
+          </a>
+          <a href={`tel:${siteData.locations[0].phone}`} class="inline-flex items-center justify-center px-8 py-3 border-2 border-white/30 text-white rounded-full hover:bg-white/10 transition-colors font-medium">
+            Call St. Vital: {siteData.locations[0].phone}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Bottom Bar -->
+  <div class="border-t border-gray-800">
+    <div class="container mx-auto px-4 py-6">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="text-sm text-gray-400">
+          © {currentYear} {siteData.name}. All rights reserved.
+        </div>
+        <div class="flex gap-6 text-sm">
+          <a href="/sitemap.xml" class="text-gray-400 hover:text-white transition-colors">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

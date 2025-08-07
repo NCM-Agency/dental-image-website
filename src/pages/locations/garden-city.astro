@@ -1,0 +1,363 @@
+---
+import LocationLayout from '../../layouts/LocationLayout.astro';
+import GoogleMap from '../../components/GoogleMap.astro';
+import { siteData } from '../../data/site-data';
+
+const location = siteData.locations[1]; // Garden City location
+---
+
+<LocationLayout 
+  title={`${location.name} Location`} 
+  location={location}
+  locationVideo="/videos/garden-city.mp4"
+  videoPoster="/images/garden-city-1.jpg"
+>
+  
+  <!-- Main Content -->
+  <div class="prose prose-lg max-w-none">
+    <h2 class="text-3xl font-heading font-semibold text-dental-charcoal mb-6">
+      Your North Winnipeg Dental Destination
+    </h2>
+    
+    <p class="text-lg text-gray-700 mb-6">
+      Located on McPhillips Street in the heart of Garden City, our north Winnipeg location 
+      has been a trusted dental care provider for families in Garden City, West Kildonan, 
+      Old Kildonan, and the North End for over 15 years. With easy access from Main Street 
+      and McPhillips, we're your convenient choice for comprehensive dental care.
+    </p>
+
+    <div class="bg-accent-100 border-l-4 border-accent-300 p-6 rounded-r-lg mb-8">
+      <h3 class="text-xl font-semibold text-dental-charcoal mb-2">Flexible Hours for Busy Families</h3>
+      <p class="text-gray-700 mb-0">
+        We know life gets busy. That's why we offer early morning appointments from 7:00 AM 
+        and evening hours until 9:00 PM on weekdays, plus Saturday appointments to accommodate 
+        your schedule.
+      </p>
+    </div>
+
+    <h3 class="text-2xl font-heading font-semibold text-dental-charcoal mb-4 mt-8">
+      Meet Our Garden City Team
+    </h3>
+    
+    <div class="grid md:grid-cols-2 gap-6 mb-8">
+      <!-- Dr. Donald Dziewit -->
+      <div class="bg-white rounded-xl shadow-md overflow-hidden">
+        <div class="h-48">
+          <img 
+            src="https://cdn.prod.website-files.com/66fc3785fb8abc41f9227d10/66fc3785fb8abc41f922823f_DITC_2022_Headshot_Dziewit.jpg"
+            alt="Dr. Donald Dziewit"
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <div class="p-6">
+          <h4 class="font-semibold text-lg mb-2">Dr. Donald Dziewit</h4>
+          <p class="text-primary-900 text-sm mb-3">Co-Owner & Lead Dentist</p>
+          <p class="text-gray-600 text-sm">
+            Winnipeg native and University of Manitoba 1994 graduate. In practice since 1998, 
+            partner since 2007, bringing innovation and expertise to our Garden City location.
+          </p>
+        </div>
+      </div>
+      
+      <!-- Dr. Linda Simpson -->
+      <div class="bg-white rounded-xl shadow-md overflow-hidden">
+        <div class="h-48">
+          <img 
+            src="https://cdn.prod.website-files.com/66fc3785fb8abc41f9227d10/66fc3785fb8abc41f922823e_DITC_2022_Headshot_Linda-Simpson.jpg"
+            alt="Dr. Linda Simpson"
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <div class="p-6">
+          <h4 class="font-semibold text-lg mb-2">Dr. Linda Simpson</h4>
+          <p class="text-primary-900 text-sm mb-3">Co-Owner & General Dentist</p>
+          <p class="text-gray-600 text-sm">
+            Miami, MB native and University of Manitoba 2002 graduate. Pacific Training Institute 
+            graduate, partner since 2007, specializing in family dentistry with compassionate care.
+          </p>
+        </div>
+      </div>
+      
+      <!-- Dr. Deji Omotayo -->
+      <div class="bg-white rounded-xl shadow-md overflow-hidden">
+        <div class="h-48">
+          <img 
+            src="https://cdn.prod.website-files.com/66fc3785fb8abc41f9227d10/66fc3785fb8abc41f92282aa_Dr.%20D.jpg"
+            alt="Dr. Deji Omotayo"
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <div class="p-6">
+          <h4 class="font-semibold text-lg mb-2">Dr. Deji Omotayo</h4>
+          <p class="text-primary-900 text-sm mb-3">General Dentist</p>
+          <p class="text-gray-600 text-sm">
+            Experienced practitioner specializing in restorative dentistry and cosmetic procedures. 
+            Known for creating comfortable experiences for anxious patients.
+          </p>
+        </div>
+      </div>
+      
+      <!-- Dr. Lisa Deng -->
+      <div class="bg-white rounded-xl shadow-md overflow-hidden">
+        <div class="h-48">
+          <img 
+            src="https://cdn.prod.website-files.com/66fc3785fb8abc41f9227d10/677855db3ed9bf46a8174810_DITC_2024_Dr-Lisa-Deng-Web.jpg"
+            alt="Dr. Lisa Deng"
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <div class="p-6">
+          <h4 class="font-semibold text-lg mb-2">Dr. Lisa Deng</h4>
+          <p class="text-primary-900 text-sm mb-3">General Dentist</p>
+          <p class="text-gray-600 text-sm">
+            Bringing modern techniques and a gentle approach to family dentistry. 
+            Passionate about preventive care and patient education.
+          </p>
+        </div>
+      </div>
+      
+      <!-- Dr. Isabella Sarzynski -->
+      <div class="bg-white rounded-xl shadow-md overflow-hidden">
+        <div class="h-48">
+          <img 
+            src="https://cdn.prod.website-files.com/66fc3785fb8abc41f9227d10/66fc3785fb8abc41f9228283_DITC_202309_Dr-Isabella-Sarzynski.jpg"
+            alt="Dr. Isabella Sarzynski"
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <div class="p-6">
+          <h4 class="font-semibold text-lg mb-2">Dr. Isabella Sarzynski</h4>
+          <p class="text-primary-900 text-sm mb-3">General Dentist</p>
+          <p class="text-gray-600 text-sm">
+            Dedicated to comprehensive dental care with a focus on patient comfort. 
+            Special interest in pediatric and family dentistry.
+          </p>
+        </div>
+      </div>
+      
+      <!-- Dr. Jessica Gonzales -->
+      <div class="bg-white rounded-xl shadow-md overflow-hidden">
+        <div class="h-48">
+          <img 
+            src="https://cdn.prod.website-files.com/66fc3785fb8abc41f9227d10/679e69c4dda70bf25de176a3_DITC_2024_Dr-Jessica-Gonzales.jpg"
+            alt="Dr. Jessica Gonzales"
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <div class="p-6">
+          <h4 class="font-semibold text-lg mb-2">Dr. Jessica Gonzales</h4>
+          <p class="text-primary-900 text-sm mb-3">General Dentist</p>
+          <p class="text-gray-600 text-sm">
+            Committed to providing personalized dental care in a relaxed environment. 
+            Expertise in cosmetic and restorative dentistry.
+          </p>
+        </div>
+      </div>
+      
+      <!-- Dr. Patricia Zoleta Morales -->
+      <div class="bg-white rounded-xl shadow-md overflow-hidden">
+        <div class="h-48">
+          <img 
+            src="https://cdn.prod.website-files.com/66fc3785fb8abc41f9227d10/66fc3785fb8abc41f9228240_DITC_2022_Headshot_Patricia-Zoleta.jpg"
+            alt="Dr. Patricia Zoleta Morales"
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <div class="p-6">
+          <h4 class="font-semibold text-lg mb-2">Dr. Patricia Zoleta Morales</h4>
+          <p class="text-primary-900 text-sm mb-3">General Dentist</p>
+          <p class="text-gray-600 text-sm">
+            Experienced in all aspects of general dentistry with a gentle touch. 
+            Fluent in multiple languages to serve our diverse community.
+          </p>
+        </div>
+      </div>
+      
+      <!-- Dr. Roland DeBrouwere -->
+      <div class="bg-white rounded-xl shadow-md overflow-hidden">
+        <div class="h-48">
+          <img 
+            src="https://cdn.prod.website-files.com/66fc3785fb8abc41f9227d10/66fc3785fb8abc41f9228242_DITC_2022_Headshot_Roland-DeBrouwere.jpg"
+            alt="Dr. Roland DeBrouwere"
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <div class="p-6">
+          <h4 class="font-semibold text-lg mb-2">Dr. Roland DeBrouwere</h4>
+          <p class="text-primary-900 text-sm mb-3">General Dentist</p>
+          <p class="text-gray-600 text-sm">
+            Seasoned practitioner with decades of experience. Specializes in complex 
+            restorative cases and comprehensive treatment planning.
+          </p>
+        </div>
+      </div>
+      
+      <!-- Dr. Mariam Nesseim -->
+      <div class="bg-white rounded-xl shadow-md overflow-hidden">
+        <div class="h-48">
+          <img 
+            src="https://cdn.prod.website-files.com/66fc3785fb8abc41f9227d10/66fc3785fb8abc41f9228244_DITC_2022_Headshot_Nesseim.jpg"
+            alt="Dr. Mariam Nesseim"
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <div class="p-6">
+          <h4 class="font-semibold text-lg mb-2">Dr. Mariam Nesseim</h4>
+          <p class="text-primary-900 text-sm mb-3">General Dentist</p>
+          <p class="text-gray-600 text-sm">
+            Passionate about preventive care and patient education. Creates a welcoming 
+            environment for patients of all ages.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Office Photos Gallery -->
+    <div class="grid md:grid-cols-3 gap-4 mb-8">
+      <div class="rounded-lg overflow-hidden">
+        <img 
+          src="/images/garden-city-1.jpg"
+          alt="Garden City dental office"
+          class="w-full h-48 object-cover"
+        />
+      </div>
+      <div class="rounded-lg overflow-hidden">
+        <img 
+          src="/images/garden-city-2.jpg"
+          alt="Garden City treatment room"
+          class="w-full h-48 object-cover"
+        />
+      </div>
+      <div class="rounded-lg overflow-hidden">
+        <img 
+          src="/images/garden-city-3.jpg"
+          alt="Garden City consultation area"
+          class="w-full h-48 object-cover"
+        />
+      </div>
+    </div>
+
+    <h3 class="text-2xl font-heading font-semibold text-dental-charcoal mb-4 mt-8">
+      Services Available at This Location
+    </h3>
+    
+    <div class="grid md:grid-cols-2 gap-4 mb-8">
+      <ul class="space-y-2">
+        <li class="flex items-start gap-2">
+          <svg class="w-5 h-5 text-primary-900 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+          </svg>
+          <span>Emergency Dental Care</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <svg class="w-5 h-5 text-primary-900 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+          </svg>
+          <span>CEREC Same-Day Crowns</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <svg class="w-5 h-5 text-primary-900 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+          </svg>
+          <span>SureSmile® Aligners</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <svg class="w-5 h-5 text-primary-900 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+          </svg>
+          <span>Dental Implants</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <svg class="w-5 h-5 text-primary-900 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+          </svg>
+          <span>IV Sedation</span>
+        </li>
+      </ul>
+      
+      <ul class="space-y-2">
+        <li class="flex items-start gap-2">
+          <svg class="w-5 h-5 text-primary-900 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+          </svg>
+          <span>Zoom! Whitening</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <svg class="w-5 h-5 text-primary-900 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+          </svg>
+          <span>Lumineers & Veneers</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <svg class="w-5 h-5 text-primary-900 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+          </svg>
+          <span>Root Canal Therapy</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <svg class="w-5 h-5 text-primary-900 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+          </svg>
+          <span>Wisdom Teeth Removal</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <svg class="w-5 h-5 text-primary-900 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+          </svg>
+          <span>Pediatric Dentistry</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="bg-gradient-to-br from-accent-50 to-accent-100/50 rounded-2xl p-8">
+      <h3 class="text-2xl font-heading font-semibold text-dental-charcoal mb-4">
+        Why Choose Our Garden City Location?
+      </h3>
+      <ul class="space-y-3">
+        <li class="flex items-start gap-3">
+          <span class="text-accent-300 text-2xl font-bold">•</span>
+          <span><strong>Central Location:</strong> Easy access from all North Winnipeg neighborhoods</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-accent-300 text-2xl font-bold">•</span>
+          <span><strong>Large Team:</strong> 9 experienced dentists to serve you</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-accent-300 text-2xl font-bold">•</span>
+          <span><strong>Extended Hours:</strong> Early morning and evening appointments</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-accent-300 text-2xl font-bold">•</span>
+          <span><strong>Advanced Technology:</strong> CEREC and SureSmile available</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-accent-300 text-2xl font-bold">•</span>
+          <span><strong>Complete Services:</strong> From routine care to complex procedures</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Map Slot -->
+  <div slot="map">
+    <GoogleMap 
+      locationName="Garden City" 
+      address="211-2305 McPhillips Street, Winnipeg, MB R2V 3E1" 
+    />
+  </div>
+  
+  <!-- Parking Info -->
+  <div slot="parking">
+    Free parking is available in our dedicated lot with entrances from both McPhillips Street 
+    and the back lane. We have ample parking spaces including designated handicap accessible 
+    spots near the main entrance. Evening parking is never an issue with our large lot.
+  </div>
+  
+  <!-- Transit Info -->
+  <div slot="transit">
+    Conveniently served by multiple Winnipeg Transit routes including the 11, 15, and 77. 
+    The nearest bus stop is directly in front of our building on McPhillips Street. 
+    We're also just a 10-minute walk from Garden City Shopping Centre transit terminal.
+  </div>
+
+</LocationLayout>

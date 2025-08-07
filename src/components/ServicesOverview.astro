@@ -1,0 +1,107 @@
+---
+import { siteData } from '../data/site-data'
+
+const serviceCategories = [
+  {
+    title: "General Dentistry",
+    description: "Comprehensive care for your everyday dental needs",
+    services: siteData.services.general.slice(0, 3),
+    bgColor: "bg-gradient-to-br from-accent-50 to-accent-100/30",
+    iconColor: "text-primary-900",
+    link: "/services/general-dentistry"
+  },
+  {
+    title: "Cosmetic Dentistry",
+    description: "Transform your smile with our aesthetic treatments",
+    services: siteData.services.cosmetic.slice(0, 3),
+    bgColor: "bg-gradient-to-br from-primary-50 to-primary-100/30",
+    iconColor: "text-primary-900",
+    link: "/services/cosmetic-dentistry"
+  },
+  {
+    title: "Specialty Services",
+    description: "Advanced care with cutting-edge technology",
+    services: siteData.services.specialty.slice(0, 3),
+    bgColor: "bg-gradient-to-br from-gray-50 to-accent-50/30",
+    iconColor: "text-primary-800",
+    link: "/services/specialty"
+  }
+]
+---
+
+<section class="py-20 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <!-- Section Header -->
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <div class="inline-flex items-center gap-2 bg-accent-100 text-primary-900 px-4 py-2 rounded-full text-sm font-medium mb-4">
+        Our Services
+      </div>
+      <h2 class="text-4xl md:text-5xl font-heading font-bold text-dental-charcoal mb-4">
+        Complete Dental Care Under One Roof
+      </h2>
+      <p class="text-lg text-gray-600">
+        From routine checkups to advanced cosmetic procedures, we provide comprehensive dental services at both our Winnipeg locations.
+      </p>
+    </div>
+    
+    <!-- Service Categories Grid -->
+    <div class="grid md:grid-cols-3 gap-8 mb-12">
+      {serviceCategories.map((category) => (
+        <div class="group relative">
+          <div class={`${category.bgColor} rounded-2xl p-8 h-full transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-1`}>
+            <!-- Category Header -->
+            <div class="mb-6">
+              <h3 class="text-2xl font-heading font-semibold text-dental-charcoal mb-2">
+                {category.title}
+              </h3>
+              <p class="text-gray-600 text-sm">
+                {category.description}
+              </p>
+            </div>
+            
+            <!-- Services List -->
+            <ul class="space-y-3 mb-6">
+              {category.services.map((service) => (
+                <li class="flex items-start gap-3">
+                  <div class={`w-5 h-5 ${category.iconColor} mt-0.5`}>
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <div class="flex-1">
+                    <div class="font-medium text-dental-charcoal">{service.name}</div>
+                    <div class="text-sm text-gray-600 mt-0.5">{service.description}</div>
+                  </div>
+                </li>
+              ))}
+            </ul>
+            
+            <!-- Learn More Link -->
+            <a href={category.link} class={`inline-flex items-center gap-2 ${category.iconColor} font-medium hover:gap-3 transition-all`}>
+              View All Services
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+    
+    <!-- Bottom CTA -->
+    <div class="text-center">
+      <div class="inline-flex flex-col sm:flex-row gap-4 items-center">
+        <a href="/services" class="inline-flex items-center justify-center px-6 py-3 bg-primary-900 text-white rounded-full hover:bg-primary-800 transition-colors font-medium">
+          Browse All Services
+        </a>
+        <span class="text-gray-500">or</span>
+        <a href="#book-appointment" class="inline-flex items-center gap-2 text-primary-900 font-medium hover:text-primary-800">
+          Book a Consultation
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,124 @@
+---
+import { siteData } from '../data/site-data'
+---
+
+<section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+  <!-- Video Background (with fallback) -->
+  <div class="absolute inset-0 z-0">
+    <!-- Background Video from original site -->
+    <video 
+      autoplay 
+      muted 
+      loop 
+      playsinline
+      class="absolute inset-0 w-full h-full object-cover"
+      poster="https://cdn.prod.website-files.com/5d8bc7e22a544b5ae99c76d7/5de983954b9e5af18c9fd4df_about-poster-00001.jpg"
+    >
+      <source src="https://cdn.prod.website-files.com/66fc3785fb8abc41f9227cde/66fc3785fb8abc41f9227d7c_about-transcode.mp4" type="video/mp4" />
+      <!-- Fallback Image -->
+      <img 
+        src="https://cdn.prod.website-files.com/5d8bc7e22a544b5ae99c76d7/5de983954b9e5af18c9fd4df_about-poster-00001.jpg" 
+        alt="Dental Image Therapy Centres team"
+        class="absolute inset-0 w-full h-full object-cover"
+      />
+    </video>
+    
+    <!-- Gradient Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-br from-primary-900/95 via-primary-900/85 to-primary-800/80"></div>
+  </div>
+  
+  <!-- Hero Content -->
+  <div class="container mx-auto px-4 relative z-10">
+    <div class="max-w-4xl mx-auto text-center text-white">
+      <!-- Tagline First -->
+      <h1 class="text-5xl md:text-6xl lg:text-7xl font-display font-normal mb-3 animate-fade-up" style="letter-spacing: normal; font-kerning: normal;">
+        {siteData.tagline}
+      </h1>
+      
+      <!-- Trust Indicator -->
+      <div class="inline-flex items-center gap-2 bg-accent-300/20 backdrop-blur-sm px-4 py-2 rounded-full mb-6">
+        <svg class="w-5 h-5 text-accent-300" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+        </svg>
+        <span class="text-sm font-medium">Serving Winnipeg for 30+ Years</span>
+      </div>
+      
+      <!-- Subheading -->
+      <p class="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl mx-auto animate-fade-up animation-delay-100">
+        Modern dental care at two convenient Winnipeg locations. Your comfort is our top priority.
+      </p>
+      
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-fade-up animation-delay-200">
+        <a href="#book-appointment" class="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-medium text-primary-900 bg-accent-300 rounded-full hover:bg-accent-200 transition-all transform hover:scale-105">
+          <span>Book Your Appointment</span>
+          <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+        <a href="/services" class="inline-flex items-center justify-center px-8 py-4 text-lg font-medium text-white border-2 border-white/30 rounded-full hover:bg-white/10 backdrop-blur-sm transition-all">
+          Explore Our Services
+        </a>
+      </div>
+      
+      <!-- Feature Pills -->
+      <div class="flex flex-wrap gap-3 justify-center animate-fade-up animation-delay-300">
+        <div class="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
+          <svg class="w-5 h-5 text-accent-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span class="text-sm">Extended Hours</span>
+        </div>
+        <div class="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
+          <svg class="w-5 h-5 text-accent-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+          </svg>
+          <span class="text-sm">Direct Billing</span>
+        </div>
+        <div class="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
+          <svg class="w-5 h-5 text-accent-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+          </svg>
+          <span class="text-sm">Family Care</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Scroll Indicator -->
+  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+    <svg class="w-6 h-6 text-white/60" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+    </svg>
+  </div>
+</section>
+
+<style>
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fade-up {
+    animation: fade-up 0.6s ease-out forwards;
+    opacity: 0;
+  }
+  
+  .animation-delay-100 {
+    animation-delay: 100ms;
+  }
+  
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+  
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+</style>
