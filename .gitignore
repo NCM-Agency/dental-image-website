@@ -1,5 +1,5 @@
 # build output
-dist/
+# dist/  # Commented out for CloudCannon static hosting
 # generated types
 .astro/
 
