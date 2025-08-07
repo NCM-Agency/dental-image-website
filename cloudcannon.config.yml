@@ -1,40 +1,157 @@
-# CloudCannon configuration
+# CloudCannon configuration for Astro
 source: .
 output: dist
 
-# Tell CloudCannon where the built files are
+# Content collections
+collections_config:
+  pages:
+    path: src/content/pages
+    name: Pages
+    _enabled_editors:
+      - visual
+      - content
+    output: true
+    url: "/[slug]/"
+    _inputs:
+      hero:
+        type: object
+        comment: "Hero section configuration"
+      sections:
+        type: array
+        comment: "Page sections"
+    
+  services:
+    path: src/content/services
+    name: Services
+    _enabled_editors:
+      - visual
+      - content
+    output: true
+    url: "/services/[slug]/"
+    schema:
+      path: src/content/config.ts
+      
+  team:
+    path: src/content/team
+    name: Team Members
+    _enabled_editors:
+      - content
+      - data
+    output: false
+
+# Global data files
+data_config:
+  locations:
+    path: src/data/locations.json
+  hours:
+    path: src/data/hours.json
+
+# Build settings
+build:
+  command: npm run build
+  environment:
+    NODE_VERSION: 20
+
+# Paths
 paths:
   static: dist
-  uploads: dist/uploads
-  
-# Page configurations
+  uploads: public/uploads
+
+# Editor settings
 _editables:
   text:
     bold: true
     italic: true
     link: true
+    undo: true
+    redo: true
   content:
+    format: p h2 h3 h4
     bold: true
     italic: true
     link: true
-    numberedlist: true
     bulletedlist: true
-    h2: true
-    h3: true
-    h4: true
-    
-# Define editable regions
-_options:
-  content_blocks:
-    structures:
+    numberedlist: true
+    image: true
+    table: true
+    undo: true
+    redo: true
+
+# Input configurations
+_inputs:
+  title:
+    type: text
+    label: Page Title
+  description:
+    type: textarea
+    label: SEO Description
+  image:
+    type: image
+    label: Featured Image
+    accepts_mime_types:
+      - image/png
+      - image/jpeg
+      - image/webp
+  category:
+    type: select
+    options:
+      values:
+        - General Dentistry
+        - Cosmetic Dentistry
+        - Emergency Care
+        - Pediatric Dentistry
+  price:
+    type: text
+    label: Starting Price
+    comment: "e.g., 'From $199'"
+
+# Page sections schemas
+_structures:
+  sections:
+    style: modal
+    values:
+      - label: Hero Section
+        icon: panorama
+        value:
+          type: hero
+          title: ""
+          subtitle: ""
+          image: ""
+          buttons: []
       - label: Text Block
-        icon: text
+        icon: text_fields
         value:
-          _type: text
-          text: ''
-      - label: Button
-        icon: smart_button
+          type: text
+          heading: ""
+          text: ""
+      - label: Services Grid
+        icon: grid_view
         value:
-          _type: button
-          text: 'Click here'
-          url: '#'
+          type: services
+          heading: "Our Services"
+          featured: []
+      - label: Team Section
+        icon: groups
+        value:
+          type: team
+          heading: "Meet Our Team"
+          members: []
+      - label: Contact Form
+        icon: email
+        value:
+          type: contact
+          heading: "Get in Touch"
+          
+  buttons:
+    style: inline
+    values:
+      - label: Primary Button
+        value:
+          text: "Click Here"
+          link: "#"
+          style: primary
+      - label: Secondary Button
+        value:
+          text: "Learn More"
+          link: "#"
+          style: secondary

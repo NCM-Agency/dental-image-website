@@ -1,0 +1,36 @@
+{
+  "locations": [
+    {
+      "id": "st-vital",
+      "name": "St. Vital Centre",
+      "address": "110-1225 St. Mary's Road",
+      "city": "Winnipeg, MB",
+      "postalCode": "R2M 5E5",
+      "phone": "204-809-3604",
+      "email": "stvital@dentalimage.ca",
+      "hours": {
+        "Monday-Thursday": "7:00 AM - 9:00 PM",
+        "Friday": "7:00 AM - 2:00 PM",
+        "Saturday": "8:00 AM - 3:00 PM",
+        "Sunday": "Closed"
+      },
+      "description": "Conveniently located in St. Vital Centre, south entrance, next to Cineplex SilverCity"
+    },
+    {
+      "id": "garden-city",
+      "name": "Garden City",
+      "address": "211-2305 McPhillips Street",
+      "city": "Winnipeg, MB",
+      "postalCode": "R2V 3E1",
+      "phone": "204-800-2709",
+      "email": "gardencity@dentalimage.ca",
+      "hours": {
+        "Monday-Thursday": "7:00 AM - 9:00 PM",
+        "Friday": "7:00 AM - 2:00 PM",
+        "Saturday": "8:00 AM - 3:00 PM",
+        "Sunday": "Closed"
+      },
+      "description": "Located in the heart of Garden City Shopping Centre"
+    }
+  ]
+}
