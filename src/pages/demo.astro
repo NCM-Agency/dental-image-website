@@ -1,0 +1,133 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import BookingWidget from '../components/BookingWidget.astro'
+
+// Editable content for CloudCannon
+const heroContent = {
+  title: "Welcome to Dental Image",
+  subtitle: "We Build Confidence",
+  description: "Winnipeg's trusted family dental care with two convenient locations. Modern technology, compassionate care, and beautiful smiles for over 20 years.",
+  ctaText: "Book Appointment"
+};
+
+const features = [
+  {
+    title: "Extended Hours",
+    description: "Evening and weekend appointments available"
+  },
+  {
+    title: "Direct Billing", 
+    description: "We handle your insurance paperwork"
+  },
+  {
+    title: "Family Friendly",
+    description: "Caring for patients of all ages"
+  }
+];
+
+const announcement = {
+  text: "🎉 Now accepting new patients at both locations!",
+  visible: true
+};
+---
+
+<Layout 
+  title="Dental Image Demo - See How Easy Editing Is"
+  description="Demo page showing CloudCannon CMS capabilities"
+>
+  <Header />
+  
+  <main>
+    <!-- Announcement Bar (Easy to toggle on/off) -->
+    {announcement.visible && (
+      <div class="bg-accent-300 text-primary-900 py-3 text-center font-semibold">
+        <p class="editable">{announcement.text}</p>
+      </div>
+    )}
+    
+    <!-- Hero Section with Editable Content -->
+    <section class="relative min-h-[80vh] flex items-center bg-gradient-to-br from-primary-900 via-primary-800 to-primary-700">
+      <div class="container mx-auto px-4 text-center">
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-display font-normal text-white mb-4 editable">
+          {heroContent.title}
+        </h1>
+        <p class="text-3xl text-accent-300 mb-6 editable">
+          {heroContent.subtitle}
+        </p>
+        <p class="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto editable">
+          {heroContent.description}
+        </p>
+        <a href="#book-appointment" class="inline-flex items-center gap-2 bg-accent-300 text-primary-900 px-8 py-4 rounded-full text-lg font-semibold hover:bg-accent-200 transition-colors">
+          <span class="editable">{heroContent.ctaText}</span>
+        </a>
+      </div>
+    </section>
+    
+    <!-- Features Grid (Show how to edit repeating content) -->
+    <section class="py-20">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-heading font-semibold text-center mb-12 editable">
+          Why Choose Dental Image?
+        </h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          {features.map((feature) => (
+            <div class="text-center">
+              <h3 class="text-2xl font-semibold mb-3 editable">{feature.title}</h3>
+              <p class="text-gray-600 editable">{feature.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+    
+    <!-- Office Hours (Show data editing) -->
+    <section class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4 max-w-2xl">
+        <h2 class="text-3xl font-heading font-semibold text-center mb-8 editable">
+          Office Hours
+        </h2>
+        <div class="bg-white rounded-xl shadow-lg p-8">
+          <div class="space-y-3">
+            <div class="flex justify-between py-2 border-b">
+              <span>Monday - Thursday</span>
+              <span class="font-semibold editable">7:00 AM - 9:00 PM</span>
+            </div>
+            <div class="flex justify-between py-2 border-b">
+              <span>Friday</span>
+              <span class="font-semibold editable">7:00 AM - 2:00 PM</span>
+            </div>
+            <div class="flex justify-between py-2">
+              <span>Saturday</span>
+              <span class="font-semibold editable">8:00 AM - 3:00 PM</span>
+            </div>
+          </div>
+          <div class="mt-6 p-4 bg-accent-50 rounded-lg">
+            <p class="text-primary-900 editable">
+              📞 Emergency? Call us anytime at 204-809-3604
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <BookingWidget />
+  </main>
+  
+  <Footer />
+</Layout>
+
+<style>
+  /* CloudCannon Visual Editor Helpers */
+  .editable {
+    transition: background-color 0.2s;
+  }
+  
+  .cms-editor-active .editable:hover {
+    background-color: rgba(255, 236, 179, 0.2);
+    outline: 2px dashed #f59e0b;
+    outline-offset: 2px;
+    cursor: text;
+  }
+</style>
