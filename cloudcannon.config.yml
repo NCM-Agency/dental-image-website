@@ -1,0 +1,91 @@
+# CloudCannon configuration for Dental Image website
+source: src
+timezone: America/Winnipeg
+
+# Build configuration
+build:
+  command: npm run build
+  output: dist
+  environment:
+    NODE_ENV: production
+
+# Collections for easy content management
+collections_config:
+  services:
+    path: src/pages/services
+    name: Services
+    singular_name: Service
+    icon: medical_services
+    _enabled_editors:
+      - visual
+      - content
+    
+  locations:
+    path: src/pages/locations  
+    name: Locations
+    singular_name: Location
+    icon: location_on
+    _enabled_editors:
+      - visual
+      - content
+
+# Global data files
+data_config:
+  site_data:
+    path: src/data/site-data.ts
+
+# Editor interface
+_editables:
+  text:
+    bold: true
+    italic: true
+    link: true
+  content:
+    blockquote: true
+    bold: true
+    italic: true
+    link: true
+    bulletedlist: true
+    numberedlist: true
+    h2: true
+    h3: true
+    h4: true
+
+# Input configurations for better editing experience
+_inputs:
+  phone:
+    type: text
+    comment: Format as 204-XXX-XXXX
+  
+  email:
+    type: email
+    
+  address:
+    type: textarea
+    
+  hours:
+    type: object
+    comment: Office hours for each day
+    
+  image:
+    type: image
+    accepts_mime_types:
+      - image/png
+      - image/jpeg
+      - image/webp
+
+# Site details for CloudCannon interface
+_options:
+  preview:
+    type: live
+    url: /
+
+# Paths
+paths:
+  uploads: public/uploads
+  static: public
+
+# Astro-specific settings
+frameworks:
+  - name: astro
+    version: 5
