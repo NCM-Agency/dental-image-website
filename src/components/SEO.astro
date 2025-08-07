@@ -1,0 +1,148 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  canonical?: string;
+  type?: string;
+}
+
+const { 
+  title = 'Dental Image Therapy Centres - Winnipeg Dentist', 
+  description = 'Two convenient Winnipeg dental locations offering comprehensive family and cosmetic dentistry. Extended hours, emergency care, and modern technology. Book today!',
+  image = '/og-image.jpg',
+  canonical,
+  type = 'website'
+} = Astro.props;
+
+const siteUrl = 'https://www.dentalimage.ca';
+const fullImageUrl = image.startsWith('http') ? image : `${siteUrl}${image}`;
+const canonicalUrl = canonical || Astro.url.href;
+---
+
+<!-- Primary Meta Tags -->
+<title>{title}</title>
+<meta name="title" content={title} />
+<meta name="description" content={description} />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8" />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content={type} />
+<meta property="og:url" content={canonicalUrl} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={fullImageUrl} />
+<meta property="og:site_name" content="Dental Image Therapy Centres" />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={canonicalUrl} />
+<meta property="twitter:title" content={title} />
+<meta property="twitter:description" content={description} />
+<meta property="twitter:image" content={fullImageUrl} />
+
+<!-- Canonical URL -->
+<link rel="canonical" href={canonicalUrl} />
+
+<!-- Local Business Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalBusiness",
+  "name": "Dental Image Therapy Centres",
+  "image": fullImageUrl,
+  "url": siteUrl,
+  "telephone": "204-256-3344",
+  "description": description,
+  "priceRange": "$$",
+  "address": [
+    {
+      "@type": "PostalAddress",
+      "streetAddress": "110-1225 St. Mary's Road",
+      "addressLocality": "Winnipeg",
+      "addressRegion": "MB",
+      "postalCode": "R2M 5E5",
+      "addressCountry": "CA"
+    },
+    {
+      "@type": "PostalAddress",
+      "streetAddress": "211-2305 McPhillips Street",
+      "addressLocality": "Winnipeg",
+      "addressRegion": "MB", 
+      "postalCode": "R2V 3E1",
+      "addressCountry": "CA"
+    }
+  ],
+  "geo": [
+    {
+      "@type": "GeoCoordinates",
+      "latitude": 49.8247,
+      "longitude": -97.1123
+    },
+    {
+      "@type": "GeoCoordinates",
+      "latitude": 49.9651,
+      "longitude": -97.1475
+    }
+  ],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"],
+      "opens": "07:00",
+      "closes": "21:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Friday",
+      "opens": "07:00",
+      "closes": "17:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "09:00",
+      "closes": "16:00"
+    }
+  ],
+  "sameAs": [
+    "https://www.facebook.com/dentalimage",
+    "https://www.instagram.com/dentalimagewpg"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Dental Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "General Dentistry"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Cosmetic Dentistry"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Emergency Dental Care"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Dental Implants"
+        }
+      }
+    ]
+  }
+}
+</script>

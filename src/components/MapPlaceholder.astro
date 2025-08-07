@@ -1,0 +1,85 @@
+---
+export interface Props {
+  locationName: string;
+  primary?: boolean;
+}
+
+const { locationName, primary = false } = Astro.props;
+---
+
+<div class="w-full h-full bg-gradient-to-br from-gray-100 to-gray-200 relative">
+  <!-- SVG Map Pattern -->
+  <svg class="absolute inset-0 w-full h-full" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+    <!-- Grid lines for street effect -->
+    <defs>
+      <pattern id={`grid-${primary ? 'primary' : 'secondary'}`} width="40" height="40" patternUnits="userSpaceOnUse">
+        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#e5e7eb" stroke-width="1"/>
+      </pattern>
+    </defs>
+    
+    <!-- Background -->
+    <rect width="400" height="200" fill="url(#grid-${primary ? 'primary' : 'secondary'})" />
+    
+    <!-- Main roads -->
+    <path d="M 0 100 L 400 100" stroke="#cbd5e1" stroke-width="3" />
+    <path d="M 200 0 L 200 200" stroke="#cbd5e1" stroke-width="3" />
+    <path d="M 50 0 L 150 200" stroke="#cbd5e1" stroke-width="2" opacity="0.7" />
+    <path d="M 350 0 L 250 200" stroke="#cbd5e1" stroke-width="2" opacity="0.7" />
+    
+    <!-- Secondary roads -->
+    <path d="M 0 50 L 400 50" stroke="#e2e8f0" stroke-width="1" />
+    <path d="M 0 150 L 400 150" stroke="#e2e8f0" stroke-width="1" />
+    <path d="M 100 0 L 100 200" stroke="#e2e8f0" stroke-width="1" />
+    <path d="M 300 0 L 300 200" stroke="#e2e8f0" stroke-width="1" />
+    
+    <!-- Water features (representing Red River) -->
+    <path 
+      d={primary 
+        ? "M 120 0 Q 140 50, 160 100 T 180 200" 
+        : "M 280 0 Q 260 50, 240 100 T 220 200"
+      }
+      stroke="#93c5fd" 
+      stroke-width="6" 
+      fill="none" 
+      opacity="0.5"
+    />
+    
+    <!-- Parks/Green spaces -->
+    <circle cx={primary ? "250" : "150"} cy="60" r="25" fill="#86efac" opacity="0.3" />
+    <rect x={primary ? "80" : "280"} y="140" width="40" height="30" fill="#86efac" opacity="0.3" rx="5" />
+    
+    <!-- Building blocks -->
+    <g opacity="0.4">
+      <rect x="60" y="30" width="30" height="20" fill="#94a3b8" />
+      <rect x="310" y="70" width="30" height="20" fill="#94a3b8" />
+      <rect x="160" y="130" width="30" height="20" fill="#94a3b8" />
+      <rect x="210" y="40" width="30" height="20" fill="#94a3b8" />
+      <rect x="110" y="160" width="30" height="20" fill="#94a3b8" />
+      <rect x="260" y="170" width="30" height="20" fill="#94a3b8" />
+    </g>
+    
+    <!-- Location marker -->
+    <g transform={`translate(${primary ? '200' : '200'}, 100)`}>
+      <!-- Marker shadow -->
+      <ellipse cx="0" cy="8" rx="4" ry="2" fill="#000" opacity="0.2" />
+      
+      <!-- Marker pin -->
+      <path d="M 0 0 C -8 0, -8 -8, -8 -12 C -8 -20, 0 -28, 0 -28 C 0 -28, 8 -20, 8 -12 C 8 -8, 8 0, 0 0 Z" 
+            fill="#1e5a94" 
+            stroke="#fff" 
+            stroke-width="2" />
+      
+      <!-- Inner circle -->
+      <circle cx="0" cy="-12" r="4" fill="#fff" />
+      
+      <!-- Pulsing effect -->
+      <circle cx="0" cy="-12" r="12" fill="none" stroke="#1e5a94" stroke-width="2" opacity="0.3">
+        <animate attributeName="r" values="12;20;12" dur="2s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0.3;0;0.3" dur="2s" repeatCount="indefinite" />
+      </circle>
+    </g>
+  </svg>
+  
+  <!-- Overlay gradient for depth -->
+  <div class="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent pointer-events-none"></div>
+</div>

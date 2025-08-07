@@ -1,0 +1,41 @@
+---
+import '../styles/app.css';
+import SEO from '../components/SEO.astro';
+
+export interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+  noindex?: boolean;
+}
+
+const { 
+  title, 
+  description = "Dental Image Therapy Centres - Modern dental care in Winnipeg. Two convenient locations offering general, cosmetic, and emergency dentistry. We Build Confidence.",
+  image = "/og-image.jpg",
+  noindex = false 
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.url);
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <SEO title={`${title} | Dental Image Therapy Centres`} description={description} image={image} canonical={canonicalURL.toString()} />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    
+    <!-- Global CSS -->
+  </head>
+  <body class="min-h-screen bg-white text-dental-charcoal">
+    <slot />
+  </body>
+</html>

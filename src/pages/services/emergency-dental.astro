@@ -1,0 +1,168 @@
+---
+import ServiceLayout from '../../layouts/ServiceLayout.astro';
+import { stockImages } from '../../lib/stock-images';
+---
+
+<ServiceLayout 
+  title="Emergency Dental Care" 
+  category="General Dentistry"
+  description="Immediate relief when you need it most. Same-day appointments for dental emergencies."
+  image="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=1920&h=600&fit=crop"
+>
+  
+  <!-- Main Content -->
+  <div class="prose prose-lg max-w-none">
+    <div class="bg-accent-100 border-l-4 border-accent-300 p-6 rounded-r-lg mb-8">
+      <h3 class="text-xl font-semibold text-dental-charcoal mb-2">We're Here When You Need Us</h3>
+      <p class="text-gray-700 mb-0">
+        Dental emergencies don't wait for convenient times. That's why we offer same-day appointments 
+        and walk-in availability at both our locations. Our extended hours mean you don't have to 
+        suffer through the night.
+      </p>
+    </div>
+
+    <h2 class="text-3xl font-heading font-semibold text-dental-charcoal mb-6">
+      Common Dental Emergencies We Treat
+    </h2>
+    
+    <div class="grid md:grid-cols-2 gap-6 mb-12">
+      <div class="bg-white rounded-xl shadow-md p-6">
+        <div class="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-primary-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </div>
+        <h4 class="font-semibold text-lg mb-2">Severe Toothache</h4>
+        <p class="text-gray-600">Immediate pain relief and treatment for infected or damaged teeth causing severe discomfort.</p>
+      </div>
+      
+      <div class="bg-white rounded-xl shadow-md p-6">
+        <div class="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-primary-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+          </svg>
+        </div>
+        <h4 class="font-semibold text-lg mb-2">Broken or Chipped Teeth</h4>
+        <p class="text-gray-600">Quick repairs to restore damaged teeth and prevent further complications.</p>
+      </div>
+      
+      <div class="bg-white rounded-xl shadow-md p-6">
+        <div class="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-primary-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </div>
+        <h4 class="font-semibold text-lg mb-2">Lost Fillings or Crowns</h4>
+        <p class="text-gray-600">Emergency replacement or repair of dental restorations to protect exposed teeth.</p>
+      </div>
+      
+      <div class="bg-white rounded-xl shadow-md p-6">
+        <div class="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-primary-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+          </svg>
+        </div>
+        <h4 class="font-semibold text-lg mb-2">Dental Abscesses</h4>
+        <p class="text-gray-600">Urgent treatment for infections that can become serious if left untreated.</p>
+      </div>
+    </div>
+
+    <h2 class="text-3xl font-heading font-semibold text-dental-charcoal mb-6">
+      What to Expect During Your Emergency Visit
+    </h2>
+    
+    <div class="space-y-4 mb-12">
+      <div class="flex gap-4">
+        <div class="flex-shrink-0 w-10 h-10 bg-primary-900 text-white rounded-full flex items-center justify-center font-semibold">1</div>
+        <div>
+          <h4 class="font-semibold mb-1">Immediate Assessment</h4>
+          <p class="text-gray-600">We'll quickly evaluate your condition and assess the severity of your emergency.</p>
+        </div>
+      </div>
+      
+      <div class="flex gap-4">
+        <div class="flex-shrink-0 w-10 h-10 bg-primary-900 text-white rounded-full flex items-center justify-center font-semibold">2</div>
+        <div>
+          <h4 class="font-semibold mb-1">Pain Management</h4>
+          <p class="text-gray-600">Your comfort is our priority. We'll provide immediate pain relief while addressing the underlying issue.</p>
+        </div>
+      </div>
+      
+      <div class="flex gap-4">
+        <div class="flex-shrink-0 w-10 h-10 bg-primary-900 text-white rounded-full flex items-center justify-center font-semibold">3</div>
+        <div>
+          <h4 class="font-semibold mb-1">Treatment Plan</h4>
+          <p class="text-gray-600">We'll explain your treatment options and perform necessary procedures to resolve the emergency.</p>
+        </div>
+      </div>
+      
+      <div class="flex gap-4">
+        <div class="flex-shrink-0 w-10 h-10 bg-primary-900 text-white rounded-full flex items-center justify-center font-semibold">4</div>
+        <div>
+          <h4 class="font-semibold mb-1">Follow-Up Care</h4>
+          <p class="text-gray-600">We'll schedule any necessary follow-up appointments and provide aftercare instructions.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-accent-50 rounded-2xl p-8 mb-12">
+      <h3 class="text-2xl font-heading font-semibold text-dental-charcoal mb-4">
+        After-Hours Emergency?
+      </h3>
+      <p class="text-gray-700 mb-4">
+        If you're experiencing extreme discomfort or need immediate medical attention outside our 
+        operating hours, please go directly to your nearest hospital emergency room.
+      </p>
+      <p class="text-gray-700">
+        For non-critical emergencies, call our office and leave a message. We'll get back to you 
+        as soon as possible when we reopen.
+      </p>
+    </div>
+  </div>
+
+  <!-- Related Services -->
+  <div slot="related-services" class="space-y-3">
+    <a href="/services/root-canal" class="block p-3 rounded-lg hover:bg-gray-50 transition-colors">
+      <h4 class="font-semibold text-dental-charcoal">Root Canal Therapy</h4>
+      <p class="text-sm text-gray-600">Save infected teeth without extraction</p>
+    </a>
+    <a href="/services/extractions" class="block p-3 rounded-lg hover:bg-gray-50 transition-colors">
+      <h4 class="font-semibold text-dental-charcoal">Tooth Extractions</h4>
+      <p class="text-sm text-gray-600">Safe removal when necessary</p>
+    </a>
+    <a href="/services/fillings" class="block p-3 rounded-lg hover:bg-gray-50 transition-colors">
+      <h4 class="font-semibold text-dental-charcoal">Dental Fillings</h4>
+      <p class="text-sm text-gray-600">Restore damaged teeth</p>
+    </a>
+  </div>
+
+  <!-- FAQ -->
+  <div slot="faq" class="space-y-6">
+    <details class="bg-white rounded-lg shadow-md p-6">
+      <summary class="font-semibold text-lg cursor-pointer">Do you accept walk-in emergency patients?</summary>
+      <p class="mt-4 text-gray-600">
+        Yes! We welcome walk-in emergency patients at both locations. While we'll do our best to 
+        see you immediately, calling ahead helps us prepare for your arrival and minimize wait times.
+      </p>
+    </details>
+    
+    <details class="bg-white rounded-lg shadow-md p-6">
+      <summary class="font-semibold text-lg cursor-pointer">What should I do for a knocked-out tooth?</summary>
+      <p class="mt-4 text-gray-600">
+        Time is critical! Gently rinse the tooth without scrubbing, try to place it back in the 
+        socket if possible, or keep it in milk. Get to our office immediately - we have the best 
+        chance of saving the tooth within the first hour.
+      </p>
+    </details>
+    
+    <details class="bg-white rounded-lg shadow-md p-6">
+      <summary class="font-semibold text-lg cursor-pointer">How much does emergency dental care cost?</summary>
+      <p class="text-gray-600 mt-4">
+        Costs vary depending on the treatment required. We offer direct billing to most insurance 
+        providers and will discuss all costs upfront. Your health is our priority - we'll work with 
+        you to find a solution that fits your budget.
+      </p>
+    </details>
+  </div>
+
+</ServiceLayout>

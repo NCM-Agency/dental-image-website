@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+/* Custom CSS Variables */
+:root {
+  --color-primary: #1e5a94;
+  --color-accent: #e4a413;
+  --gradient-overlay: linear-gradient(135deg, rgba(30, 90, 148, 0.95), rgba(8, 145, 178, 0.85));
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus Styles */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Selection Styles */
+::selection {
+  background-color: #0891b2;
+  color: white;
+}
+
+/* Custom Shimmer Animation for Buttons */
+.shimmer-button {
+  background: linear-gradient(
+    110deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 60%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s linear infinite;
+}
+
+/* Gradient Text Effect */
+.gradient-text {
+  background: linear-gradient(135deg, var(--color-primary), #0891b2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Professional Box Shadow */
+.card-shadow {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 
+              0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+
+.card-shadow-hover {
+  transition: all 0.3s ease;
+}
+
+.card-shadow-hover:hover {
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 
+              0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  transform: translateY(-2px);
+}
+
+/* Shimmer Button Animations */
+@keyframes shimmer-slide {
+  to {
+    transform: translate(calc(100cqw - 100%), 0);
+  }
+}
+
+@keyframes spin-around {
+  to {
+    transform: rotate(1turn);
+  }
+}

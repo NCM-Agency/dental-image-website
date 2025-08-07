@@ -1,0 +1,24 @@
+---
+export interface Props {
+  locationName: string;
+  address: string;
+}
+
+const { locationName, address } = Astro.props;
+
+// Encode address for Google Maps embed
+const encodedAddress = encodeURIComponent(address);
+---
+
+<div class="w-full h-96 relative">
+  <iframe
+    class="absolute inset-0 w-full h-full"
+    style="border:0"
+    loading="lazy"
+    allowfullscreen
+    referrerpolicy="no-referrer-when-downgrade"
+    src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=${encodedAddress}&zoom=15`}
+    title={`Map showing ${locationName} location`}
+  >
+  </iframe>
+</div>
