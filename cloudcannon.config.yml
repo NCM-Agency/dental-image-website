@@ -1,4 +1,10 @@
-# Simple CloudCannon configuration for static hosting
-source: dist
+# CloudCannon configuration
+source: .
+output: dist
 
-# No build needed - using prebuilt files
+# Tell CloudCannon where the built files are
+paths:
+  static: dist
+  uploads: dist/uploads
+
+# No build needed - using prebuilt files in dist folder
