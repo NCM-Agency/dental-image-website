@@ -22,3 +22,25 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# Internal agency files - NEVER commit these
+HANDOFF.md
+HANDOFF*.md
+*-internal.md
+*-agency.md
+NOTES.md
+TODO.md
+PRICING.md
+CLIENT-NOTES.md
+.agency/
+.internal/
+
+# Backup files
+*.backup
+*.bak
+*.tmp
+*~
+
+# Windows special files
+nul
+NUL
