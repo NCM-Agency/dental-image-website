@@ -6,5 +6,35 @@ output: dist
 paths:
   static: dist
   uploads: dist/uploads
-
-# No build needed - using prebuilt files in dist folder
+  
+# Page configurations
+_editables:
+  text:
+    bold: true
+    italic: true
+    link: true
+  content:
+    bold: true
+    italic: true
+    link: true
+    numberedlist: true
+    bulletedlist: true
+    h2: true
+    h3: true
+    h4: true
+    
+# Define editable regions
+_options:
+  content_blocks:
+    structures:
+      - label: Text Block
+        icon: text
+        value:
+          _type: text
+          text: ''
+      - label: Button
+        icon: smart_button
+        value:
+          _type: button
+          text: 'Click here'
+          url: '#'
