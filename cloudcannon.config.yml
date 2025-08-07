@@ -4,10 +4,12 @@ timezone: America/Winnipeg
 
 # Build configuration
 build:
+  install_command: npm install
   command: npm run build
   output: dist
   environment:
     NODE_ENV: production
+    NODE_VERSION: 20
 
 # Collections for easy content management
 collections_config:
