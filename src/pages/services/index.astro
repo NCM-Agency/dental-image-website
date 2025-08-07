@@ -43,14 +43,28 @@ const allServices = [
   <Header />
   
   <!-- Services Hero -->
-  <section class="relative py-20 bg-gradient-to-br from-primary-900 via-primary-800 to-primary-700">
-    <div class="absolute inset-0 bg-black/10"></div>
-    <div class="container mx-auto px-4 relative z-10">
-      <div class="text-center text-white max-w-3xl mx-auto">
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-normal mb-6">
+  <section class="relative h-[40vh] min-h-[400px] flex items-center">
+    <div class="absolute inset-0">
+      <img 
+        src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1920&h=600&fit=crop" 
+        alt="Dental Services"
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-gradient-to-br from-primary-900/95 via-primary-900/85 to-primary-800/80"></div>
+    </div>
+    
+    <div class="container mx-auto px-4 relative z-10 flex flex-col justify-center h-full py-12">
+      <nav class="flex items-center gap-2 text-white/80 text-sm mb-6">
+        <a href="/" class="hover:text-white transition-colors">Home</a>
+        <span>/</span>
+        <span class="text-white">Services</span>
+      </nav>
+      
+      <div class="flex-1 flex flex-col justify-center">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-normal text-white mb-4">
           Comprehensive Dental Services
         </h1>
-        <p class="text-xl text-white/90">
+        <p class="text-xl text-white/90 max-w-3xl">
           From routine cleanings to advanced restorations, we provide complete dental care 
           using the latest technology and techniques.
         </p>
