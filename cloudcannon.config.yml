@@ -1,5 +1,5 @@
 # CloudCannon configuration for Dental Image website
-source: src
+source: dist
 timezone: America/Winnipeg
 
 # Build configuration
