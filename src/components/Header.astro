@@ -3,22 +3,20 @@ import { siteData } from '../data/site-data'
 ---
 
 <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100">
-  <!-- Top Bar with Contact Info -->
-  <div class="bg-primary-900 text-white py-3">
+  <!-- Top Bar with Contact Info - Hidden on Mobile -->
+  <div class="hidden sm:block bg-primary-900 text-white py-2">
     <div class="container mx-auto px-4">
-      <div class="flex flex-wrap justify-between items-center text-sm">
-        <div class="flex flex-col sm:flex-row gap-2 sm:gap-6">
-          <a href={`tel:${siteData.locations[0].phone}`} class="hover:text-accent-300 transition-colors flex items-center gap-1 min-h-[44px] py-1">
-            <span class="font-medium">St. Vital:</span> 
-            <span class="text-accent-200">{siteData.locations[0].phone}</span>
+      <div class="flex justify-between items-center text-sm">
+        <div class="flex gap-6">
+          <a href={`tel:${siteData.locations[0].phone}`} class="hover:text-accent-300 transition-colors">
+            <span class="font-medium">St. Vital:</span> {siteData.locations[0].phone}
           </a>
-          <a href={`tel:${siteData.locations[1].phone}`} class="hover:text-accent-300 transition-colors flex items-center gap-1 min-h-[44px] py-1 sm:inline-flex">
-            <span class="font-medium">Garden City:</span> 
-            <span class="text-accent-200">{siteData.locations[1].phone}</span>
+          <a href={`tel:${siteData.locations[1].phone}`} class="hover:text-accent-300 transition-colors">
+            <span class="font-medium">Garden City:</span> {siteData.locations[1].phone}
           </a>
         </div>
         <div class="flex gap-4 items-center">
-          <span class="hidden lg:inline text-xs">Mon-Thu: 7AM-9PM | Fri: 7AM-2PM | Sat: 8AM-3PM</span>
+          <span class="hidden lg:inline">Mon-Thu: 7AM-9PM | Fri: 7AM-2PM | Sat: 8AM-3PM</span>
         </div>
       </div>
     </div>
@@ -123,7 +121,7 @@ import { siteData } from '../data/site-data'
   <div class="absolute inset-0 bg-black bg-opacity-50" id="mobile-menu-backdrop"></div>
   
   <!-- Mobile Menu Panel -->
-  <div class="absolute top-0 right-0 w-80 h-full bg-white shadow-xl transform translate-x-full transition-transform duration-300 ease-in-out" id="mobile-menu-panel">
+  <div class="absolute top-0 right-0 w-80 h-full bg-white shadow-xl transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col" id="mobile-menu-panel">
     <!-- Mobile Menu Header -->
     <div class="flex justify-between items-center p-6 border-b border-gray-200">
       <div class="flex items-center gap-3">
@@ -145,7 +143,7 @@ import { siteData } from '../data/site-data'
     </div>
     
     <!-- Mobile Menu Content -->
-    <div class="flex-1 overflow-y-auto">
+    <div class="flex-1 overflow-y-auto max-h-[calc(100vh-88px)]">
       <!-- CTA Section -->
       <div class="p-6 bg-primary-50 border-b border-gray-200">
         <div class="grid grid-cols-1 gap-3">
@@ -209,7 +207,7 @@ import { siteData } from '../data/site-data'
         </div>
         
         <!-- Main Navigation -->
-        <div class="space-y-1">
+        <div class="space-y-1 pb-6">
           <a href="/about" class="flex items-center h-11 px-3 -mx-3 text-dental-charcoal hover:bg-gray-50 hover:text-primary-900 transition-colors rounded-lg font-medium">About Us</a>
           <a href="/contact" class="flex items-center h-11 px-3 -mx-3 text-dental-charcoal hover:bg-gray-50 hover:text-primary-900 transition-colors rounded-lg font-medium">Contact</a>
         </div>
