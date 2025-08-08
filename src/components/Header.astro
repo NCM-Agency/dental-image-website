@@ -4,19 +4,21 @@ import { siteData } from '../data/site-data'
 
 <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100">
   <!-- Top Bar with Contact Info -->
-  <div class="bg-primary-900 text-white py-2">
+  <div class="bg-primary-900 text-white py-3">
     <div class="container mx-auto px-4">
       <div class="flex flex-wrap justify-between items-center text-sm">
-        <div class="flex gap-6">
-          <a href={`tel:${siteData.locations[0].phone}`} class="hover:text-accent-300 transition-colors">
-            <span class="font-medium">St. Vital:</span> {siteData.locations[0].phone}
+        <div class="flex flex-col sm:flex-row gap-2 sm:gap-6">
+          <a href={`tel:${siteData.locations[0].phone}`} class="hover:text-accent-300 transition-colors flex items-center gap-1 min-h-[44px] py-1">
+            <span class="font-medium">St. Vital:</span> 
+            <span class="text-accent-200">{siteData.locations[0].phone}</span>
           </a>
-          <a href={`tel:${siteData.locations[1].phone}`} class="hover:text-accent-300 transition-colors hidden sm:inline-flex">
-            <span class="font-medium">Garden City:</span> {siteData.locations[1].phone}
+          <a href={`tel:${siteData.locations[1].phone}`} class="hover:text-accent-300 transition-colors flex items-center gap-1 min-h-[44px] py-1 sm:inline-flex">
+            <span class="font-medium">Garden City:</span> 
+            <span class="text-accent-200">{siteData.locations[1].phone}</span>
           </a>
         </div>
         <div class="flex gap-4 items-center">
-          <span class="hidden md:inline">Mon-Thu: 7AM-9PM | Fri: 7AM-2PM | Sat: 8AM-3PM</span>
+          <span class="hidden lg:inline text-xs">Mon-Thu: 7AM-9PM | Fri: 7AM-2PM | Sat: 8AM-3PM</span>
         </div>
       </div>
     </div>
@@ -103,9 +105,12 @@ import { siteData } from '../data/site-data'
         </div>
         
         <!-- Mobile Menu Button -->
-        <button class="lg:hidden p-2" id="mobile-menu-button">
-          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <button class="lg:hidden p-3 min-w-[44px] min-h-[44px] flex items-center justify-center" id="mobile-menu-button" aria-label="Open menu">
+          <svg class="w-6 h-6" id="hamburger-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <svg class="w-6 h-6 hidden" id="close-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
       </div>
@@ -113,7 +118,193 @@ import { siteData } from '../data/site-data'
   </nav>
 </header>
 
+<!-- Mobile Menu Overlay -->
+<div class="fixed inset-0 z-40 lg:hidden hidden" id="mobile-menu-overlay">
+  <div class="absolute inset-0 bg-black bg-opacity-50" id="mobile-menu-backdrop"></div>
+  
+  <!-- Mobile Menu Panel -->
+  <div class="absolute top-0 right-0 w-80 h-full bg-white shadow-xl transform translate-x-full transition-transform duration-300 ease-in-out" id="mobile-menu-panel">
+    <!-- Mobile Menu Header -->
+    <div class="flex justify-between items-center p-6 border-b border-gray-200">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 bg-gradient-to-br from-primary-900 to-primary-800 rounded-lg flex items-center justify-center">
+          <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+          </svg>
+        </div>
+        <div>
+          <div class="text-lg font-heading font-bold text-primary-900">Dental Image</div>
+          <div class="text-xs text-primary-800">Therapy Centres</div>
+        </div>
+      </div>
+      <button class="p-3 min-w-[44px] min-h-[44px] flex items-center justify-center" id="mobile-menu-close" aria-label="Close menu">
+        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+    
+    <!-- Mobile Menu Content -->
+    <div class="flex-1 overflow-y-auto">
+      <!-- CTA Section -->
+      <div class="p-6 bg-primary-50 border-b border-gray-200">
+        <div class="grid grid-cols-1 gap-3">
+          <a href={`tel:${siteData.locations[0].phone}`} class="flex items-center justify-center min-h-[44px] px-4 bg-primary-900 text-white rounded-full hover:bg-primary-800 transition-colors font-medium">
+            Call Now
+          </a>
+          <a href="#book-appointment" class="flex items-center justify-center min-h-[44px] px-4 border-2 border-primary-900 text-primary-900 rounded-full hover:bg-accent-50 transition-colors font-medium">
+            Book Appointment
+          </a>
+        </div>
+      </div>
+      
+      <!-- Phone Numbers Section -->
+      <div class="p-6 border-b border-gray-200">
+        <h3 class="text-sm font-semibold text-gray-700 uppercase tracking-wider mb-3">Call Direct</h3>
+        <div class="space-y-3">
+          <a href={`tel:${siteData.locations[0].phone}`} class="flex items-center h-11 text-lg font-medium text-primary-900 hover:text-primary-800 transition-colors">
+            <span class="text-sm text-gray-600 w-20">St. Vital:</span>
+            {siteData.locations[0].phone}
+          </a>
+          <a href={`tel:${siteData.locations[1].phone}`} class="flex items-center h-11 text-lg font-medium text-primary-900 hover:text-primary-800 transition-colors">
+            <span class="text-sm text-gray-600 w-20">Garden City:</span>
+            {siteData.locations[1].phone}
+          </a>
+        </div>
+      </div>
+      
+      <!-- Navigation Links -->
+      <div class="p-6">
+        <!-- Services Section -->
+        <div class="mb-8">
+          <h3 class="text-sm font-semibold text-gray-700 uppercase tracking-wider mb-4">Services</h3>
+          <div class="space-y-1">
+            <a href="/services/emergency-dental" class="flex items-center h-11 px-3 -mx-3 text-dental-charcoal hover:bg-gray-50 hover:text-primary-900 transition-colors rounded-lg">Emergency Dental</a>
+            <a href="/services/general-dentistry" class="flex items-center h-11 px-3 -mx-3 text-dental-charcoal hover:bg-gray-50 hover:text-primary-900 transition-colors rounded-lg">General Dentistry</a>
+            <a href="/services/cosmetic-dentistry" class="flex items-center h-11 px-3 -mx-3 text-dental-charcoal hover:bg-gray-50 hover:text-primary-900 transition-colors rounded-lg">Cosmetic Dentistry</a>
+            <a href="/services/childrens-dentistry" class="flex items-center h-11 px-3 -mx-3 text-dental-charcoal hover:bg-gray-50 hover:text-primary-900 transition-colors rounded-lg">Children's Dentistry</a>
+            <a href="/services/cerec" class="flex items-center h-11 px-3 -mx-3 text-dental-charcoal hover:bg-gray-50 hover:text-primary-900 transition-colors rounded-lg">CEREC Same-Day Crowns</a>
+            <a href="/services/crowns-bridges" class="flex items-center h-11 px-3 -mx-3 text-dental-charcoal hover:bg-gray-50 hover:text-primary-900 transition-colors rounded-lg">Crowns & Bridges</a>
+            <a href="/services/dental-restoration" class="flex items-center h-11 px-3 -mx-3 text-dental-charcoal hover:bg-gray-50 hover:text-primary-900 transition-colors rounded-lg">Dental Restoration</a>
+            <a href="/services/dentures" class="flex items-center h-11 px-3 -mx-3 text-dental-charcoal hover:bg-gray-50 hover:text-primary-900 transition-colors rounded-lg">Dentures</a>
+            <a href="/services/extractions" class="flex items-center h-11 px-3 -mx-3 text-dental-charcoal hover:bg-gray-50 hover:text-primary-900 transition-colors rounded-lg">Extractions</a>
+            <a href="/services/fillings" class="flex items-center h-11 px-3 -mx-3 text-dental-charcoal hover:bg-gray-50 hover:text-primary-900 transition-colors rounded-lg">Fillings</a>
+            <a href="/services/invisalign" class="flex items-center h-11 px-3 -mx-3 text-dental-charcoal hover:bg-gray-50 hover:text-primary-900 transition-colors rounded-lg">Invisalign</a>
+            <a href="/services/iv-sedation" class="flex items-center h-11 px-3 -mx-3 text-dental-charcoal hover:bg-gray-50 hover:text-primary-900 transition-colors rounded-lg">IV Sedation</a>
+            <a href="/services/scaling" class="flex items-center h-11 px-3 -mx-3 text-dental-charcoal hover:bg-gray-50 hover:text-primary-900 transition-colors rounded-lg">Scaling</a>
+            <a href="/services/sealants" class="flex items-center h-11 px-3 -mx-3 text-dental-charcoal hover:bg-gray-50 hover:text-primary-900 transition-colors rounded-lg">Sealants</a>
+            <a href="/services/ultrasonic-scaling" class="flex items-center h-11 px-3 -mx-3 text-dental-charcoal hover:bg-gray-50 hover:text-primary-900 transition-colors rounded-lg">Ultrasonic Scaling</a>
+            <a href="/services/veneers" class="flex items-center h-11 px-3 -mx-3 text-dental-charcoal hover:bg-gray-50 hover:text-primary-900 transition-colors rounded-lg">Veneers</a>
+            <a href="/services/zoom-whitening" class="flex items-center h-11 px-3 -mx-3 text-dental-charcoal hover:bg-gray-50 hover:text-primary-900 transition-colors rounded-lg">Zoom! Whitening</a>
+          </div>
+        </div>
+        
+        <!-- Locations Section -->
+        <div class="mb-8">
+          <h3 class="text-sm font-semibold text-gray-700 uppercase tracking-wider mb-4">Locations</h3>
+          <div class="space-y-1">
+            <a href="/locations/st-vital" class="flex items-center h-11 px-3 -mx-3 text-dental-charcoal hover:bg-gray-50 hover:text-primary-900 transition-colors rounded-lg">St. Vital Centre</a>
+            <a href="/locations/garden-city" class="flex items-center h-11 px-3 -mx-3 text-dental-charcoal hover:bg-gray-50 hover:text-primary-900 transition-colors rounded-lg">Garden City</a>
+          </div>
+        </div>
+        
+        <!-- Main Navigation -->
+        <div class="space-y-1">
+          <a href="/about" class="flex items-center h-11 px-3 -mx-3 text-dental-charcoal hover:bg-gray-50 hover:text-primary-900 transition-colors rounded-lg font-medium">About Us</a>
+          <a href="/contact" class="flex items-center h-11 px-3 -mx-3 text-dental-charcoal hover:bg-gray-50 hover:text-primary-900 transition-colors rounded-lg font-medium">Contact</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
-  const mobileMenuButton = document.getElementById('mobile-menu-button');
-  // Mobile menu implementation would go here
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+    const mobileMenuPanel = document.getElementById('mobile-menu-panel');
+    const mobileMenuClose = document.getElementById('mobile-menu-close');
+    const mobileMenuBackdrop = document.getElementById('mobile-menu-backdrop');
+    const hamburgerIcon = document.getElementById('hamburger-icon');
+    const closeIcon = document.getElementById('close-icon');
+    const body = document.body;
+    
+    let isMenuOpen = false;
+    
+    function openMenu() {
+      if (isMenuOpen) return;
+      
+      isMenuOpen = true;
+      mobileMenuOverlay.classList.remove('hidden');
+      body.style.overflow = 'hidden';
+      
+      // Toggle icons
+      hamburgerIcon.classList.add('hidden');
+      closeIcon.classList.remove('hidden');
+      
+      // Animate menu panel
+      setTimeout(() => {
+        mobileMenuPanel.classList.remove('translate-x-full');
+      }, 10);
+    }
+    
+    function closeMenu() {
+      if (!isMenuOpen) return;
+      
+      isMenuOpen = false;
+      mobileMenuPanel.classList.add('translate-x-full');
+      body.style.overflow = '';
+      
+      // Toggle icons
+      hamburgerIcon.classList.remove('hidden');
+      closeIcon.classList.add('hidden');
+      
+      // Hide overlay after animation
+      setTimeout(() => {
+        mobileMenuOverlay.classList.add('hidden');
+      }, 300);
+    }
+    
+    // Event listeners
+    mobileMenuButton.addEventListener('click', function(e) {
+      e.preventDefault();
+      if (isMenuOpen) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+    
+    mobileMenuClose.addEventListener('click', function(e) {
+      e.preventDefault();
+      closeMenu();
+    });
+    
+    mobileMenuBackdrop.addEventListener('click', function(e) {
+      e.preventDefault();
+      closeMenu();
+    });
+    
+    // Close menu when clicking on navigation links
+    const menuLinks = mobileMenuPanel.querySelectorAll('a');
+    menuLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        closeMenu();
+      });
+    });
+    
+    // Handle escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && isMenuOpen) {
+        closeMenu();
+      }
+    });
+    
+    // Handle window resize - close menu if window becomes large
+    window.addEventListener('resize', function() {
+      if (window.innerWidth >= 1024 && isMenuOpen) {
+        closeMenu();
+      }
+    });
+  });
 </script>
