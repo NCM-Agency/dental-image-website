@@ -55,7 +55,7 @@ build:
 # Paths
 paths:
   static: dist
-  uploads: public/uploads
+  uploads: dist/uploads
 
 # Editor settings
 _editables:
