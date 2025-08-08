@@ -46,8 +46,9 @@ export function getMapboxStaticMap(options: MapOptions): string {
   // Add dimensions
   url += `${width}x${height}@2x`;
   
-  // For demo purposes, using a public token (replace with your own for production)
-  url += `?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw`;
+  // Use environment variable for API token (falls back to demo token for development)
+  const token = import.meta.env.PUBLIC_MAPBOX_TOKEN || 'demo-token';
+  url += `?access_token=${token}`;
   
   return url;
 }
@@ -70,8 +71,9 @@ export function getOSMStaticMap(options: MapOptions): string {
     url += `&marker=lonlat:${lng},${lat};color:%231e5a94;size:large`;
   }
   
-  // Demo API key (replace with your own from geoapify.com - free tier available)
-  url += `&apiKey=YOUR_API_KEY`;
+  // Use environment variable for API key
+  const apiKey = import.meta.env.PUBLIC_GEOAPIFY_KEY || 'demo-key';
+  url += `&apiKey=${apiKey}`;
   
   return url;
 }
@@ -105,8 +107,11 @@ export function getGoogleStaticMap(options: MapOptions): string {
     url += `&style=feature:water|element:geometry|color:0xc9c9c9`;
   }
   
-  // Note: Requires API key for production use
-  // url += `&key=YOUR_GOOGLE_MAPS_API_KEY`;
+  // Use environment variable for API key if available
+  const googleKey = import.meta.env.PUBLIC_GOOGLE_MAPS_KEY;
+  if (googleKey) {
+    url += `&key=${googleKey}`;
+  }
   
   return url;
 }
