@@ -1,0 +1,142 @@
+---
+export interface Props {
+  service: {
+    id: string;
+    name: string;
+    description: string;
+    link: string;
+  };
+  categoryColor?: 'primary' | 'accent' | 'blue';
+  icon?: string;
+}
+
+const { service, categoryColor = 'primary', icon } = Astro.props;
+
+// Service-specific icons
+const serviceIcons = {
+  'emergency-dental': `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+  </svg>`,
+  'scaling': `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+  </svg>`,
+  'fillings': `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+  </svg>`,
+  'root-canal': `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+  </svg>`,
+  'extractions': `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+  </svg>`,
+  'zoom-whitening': `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+  </svg>`,
+  'invisalign': `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+  </svg>`,
+  'veneers': `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+  </svg>`,
+  'crowns': `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+  </svg>`,
+  'implants': `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+  </svg>`,
+  'cerec': `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+  </svg>`,
+  'sedation': `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+  </svg>`,
+  'dentures': `<svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+  </svg>`
+};
+
+const colorClasses = {
+  primary: {
+    bg: 'from-primary-600 to-primary-700',
+    hover: 'group-hover:from-primary-700 group-hover:to-primary-800',
+    iconBg: 'bg-white/20',
+    text: 'text-white',
+    border: 'border-primary-200',
+    shine: 'bg-gradient-to-r from-transparent via-white/20 to-transparent'
+  },
+  accent: {
+    bg: 'from-accent-400 to-accent-500',
+    hover: 'group-hover:from-accent-500 group-hover:to-accent-600',
+    iconBg: 'bg-white/30',
+    text: 'text-primary-900',
+    border: 'border-accent-200',
+    shine: 'bg-gradient-to-r from-transparent via-white/30 to-transparent'
+  },
+  blue: {
+    bg: 'from-blue-600 to-blue-700',
+    hover: 'group-hover:from-blue-700 group-hover:to-blue-800',
+    iconBg: 'bg-white/20',
+    text: 'text-white',
+    border: 'border-blue-200',
+    shine: 'bg-gradient-to-r from-transparent via-white/20 to-transparent'
+  }
+};
+
+const colors = colorClasses[categoryColor];
+const serviceIcon = serviceIcons[service.id] || icon || serviceIcons['fillings'];
+---
+
+<a href={service.link} class="group block h-full">
+  <div class="relative h-full overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-lg transition-all duration-500 group-hover:shadow-2xl group-hover:-translate-y-2 group-hover:border-transparent">
+    <!-- Gradient Background Top -->
+    <div class={`absolute inset-x-0 top-0 h-32 bg-gradient-to-br ${colors.bg} ${colors.hover} transition-all duration-500`}>
+      <!-- Animated Shine Effect -->
+      <div class={`absolute inset-0 ${colors.shine} opacity-0 group-hover:opacity-100 -skew-x-12 -translate-x-full group-hover:translate-x-full transition-all duration-700`}></div>
+      
+      <!-- Pattern Overlay -->
+      <div class="absolute inset-0 opacity-10">
+        <svg class="w-full h-full" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id={`pattern-${service.id}`} x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+              <circle cx="2" cy="2" r="1" fill="white" />
+              <circle cx="12" cy="12" r="1" fill="white" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill={`url(#pattern-${service.id})`} />
+        </svg>
+      </div>
+    </div>
+    
+    <!-- Icon Container -->
+    <div class="relative z-10 px-6 pt-6">
+      <div class={`inline-flex h-16 w-16 items-center justify-center rounded-xl ${colors.iconBg} backdrop-blur-sm border border-white/30 shadow-lg transform transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3`}>
+        <div class={colors.text} set:html={serviceIcon} />
+      </div>
+    </div>
+    
+    <!-- Content -->
+    <div class="relative px-6 pb-6 pt-4">
+      <h3 class="text-xl font-bold text-dental-charcoal mb-2 transition-colors duration-300 group-hover:text-primary-900">
+        {service.name}
+      </h3>
+      <p class="text-gray-600 text-sm mb-4 line-clamp-2">
+        {service.description}
+      </p>
+      
+      <!-- Learn More Link -->
+      <div class="flex items-center justify-between">
+        <span class="text-sm font-semibold text-primary-900 group-hover:text-primary-700 transition-colors">
+          Learn More
+        </span>
+        <div class="flex items-center justify-center w-8 h-8 rounded-full bg-primary-100 group-hover:bg-primary-900 transition-all duration-300">
+          <svg class="w-4 h-4 text-primary-900 group-hover:text-white transition-all duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Bottom Border Animation -->
+    <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-500 via-accent-400 to-primary-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+  </div>
+</a>

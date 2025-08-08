@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
 import { siteData } from '../../data/site-data';
 
 const allServices = [
@@ -43,7 +44,7 @@ const allServices = [
   <Header />
   
   <!-- Services Hero -->
-  <section class="relative h-[40vh] min-h-[400px] flex items-center">
+  <section class="relative h-[40vh] min-h-[400px] flex items-center pt-32">
     <div class="absolute inset-0">
       <img 
         src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1920&h=600&fit=crop" 
@@ -93,27 +94,10 @@ const allServices = [
           <!-- Services Cards -->
           <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {category.services.map((service) => (
-              <a href={service.link} class="group">
-                <div class="bg-white rounded-xl shadow-lg p-6 h-full transition-all duration-300 group-hover:shadow-2xl group-hover:-translate-y-1">
-                  <div class="w-12 h-12 bg-gradient-to-br from-accent-100 to-accent-200/30 rounded-lg flex items-center justify-center mb-4">
-                    <svg class="w-6 h-6 text-primary-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                    </svg>
-                  </div>
-                  <h3 class="text-xl font-semibold text-dental-charcoal mb-2 group-hover:text-primary-900 transition-colors">
-                    {service.name}
-                  </h3>
-                  <p class="text-gray-600">
-                    {service.description}
-                  </p>
-                  <div class="mt-4 flex items-center text-primary-900 font-medium">
-                    Learn More
-                    <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                    </svg>
-                  </div>
-                </div>
-              </a>
+              <ServiceCard 
+                service={service} 
+                categoryColor={index === 0 ? 'primary' : index === 1 ? 'accent' : 'blue'}
+              />
             ))}
           </div>
         </div>
