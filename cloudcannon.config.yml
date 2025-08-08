@@ -8,10 +8,10 @@ collections_config:
     path: src/content/pages
     name: Pages
     _enabled_editors:
-      - visual
+      - data
       - content
-    output: true
-    url: "/[slug]/"
+    output: false
+    url: "/"
     _inputs:
       hero:
         type: object
@@ -41,6 +41,8 @@ collections_config:
 
 # Global data files
 data_config:
+  homepage:
+    path: src/data/homepage.json
   locations:
     path: src/data/locations.json
   hours:

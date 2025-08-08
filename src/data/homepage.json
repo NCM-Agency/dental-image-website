@@ -1,0 +1,33 @@
+{
+  "hero": {
+    "title": "Welcome to Dental Image",
+    "subtitle": "We Build Confidence",
+    "description": "Modern dental care at two convenient Winnipeg locations. Your comfort is our top priority.",
+    "primaryButton": {
+      "text": "Book Appointment",
+      "link": "#book-appointment"
+    },
+    "secondaryButton": {
+      "text": "Explore Our Services",
+      "link": "/services"
+    }
+  },
+  "features": [
+    {
+      "title": "Extended Hours",
+      "description": "Evening and weekend appointments available for your convenience"
+    },
+    {
+      "title": "Direct Billing",
+      "description": "We handle your insurance paperwork so you don't have to"
+    },
+    {
+      "title": "Family Friendly",
+      "description": "Caring for patients of all ages in a comfortable environment"
+    }
+  ],
+  "seo": {
+    "title": "Modern Dental Care in Winnipeg | Dental Image",
+    "description": "Dental Image Therapy Centres - Two convenient Winnipeg locations offering comprehensive dental care. Extended hours, direct billing, and family-friendly service."
+  }
+}
